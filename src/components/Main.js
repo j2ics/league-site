@@ -14,7 +14,7 @@ class Main extends Component {
     const leadArticle = articles[0];
     return (
       <Fragment>
-        <div style={{"paddingTop": "15px"}}>
+        <div>
           <div className="container">
             <div className="row">
               <div className="col col-md-8">
