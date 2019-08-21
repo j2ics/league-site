@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Standings from "./components/Standings";
+import Schedule from './components/Schedule'
 import Data from "./DATA";
 
 const DEFAULT_DATA = Data.getData();
@@ -24,6 +25,10 @@ class App extends Component {
             <Route
               path="/standings"
               render={() => <Standings {...this.state} />}
+            />
+            <Route 
+              path="/schedule"
+              render={() => <Schedule {...this.state}/>}
             />
           </div>
         </Router>

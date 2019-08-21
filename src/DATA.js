@@ -13,7 +13,7 @@ const getRace = () => {
     newRace.location = `${Faker.address.country()}`;
     newRace.circuit = `${Faker.address.city()} Circuit`;
     newRace.duration = `${Math.floor(Math.random()*93)} laps`;
-    newRace.date = `${Faker.date.future()}`
+    newRace.date = `${Faker.date.future().toDateString()}`
     return newRace;
 }
 
