@@ -8,13 +8,18 @@ class Article extends Component {
     return (
       <Fragment>
         <div className="card text-white bg-primary mb-3">
-          <div className="card-header"><h4 className="card-title">{title}</h4></div>
+          <div className="card-header">
+            <h4 className="card-title">{title}</h4>
+          </div>
           <div className="card-body">
             {this.props.lead ? (
-              <img class="card-img-top" src={image} alt="Card image cap" />
+                <Fragment>
+                <img class="card-img-top" src={image} alt="Card image cap" />
+                <p className="card-text">by {author}</p>
+                <p className="card-text">{date}</p>
+              </Fragment>
             ) : null}
-            <p className="card-text">{author}</p>
-            <p className="card-text">{date}</p>
+
             <p className="card-text">{content}</p>
           </div>
         </div>
