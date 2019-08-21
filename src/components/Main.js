@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import logo from "../assets/img/j2ics-logo-md.png";
 import Article from "./Article";
 import Leaders from "./Leaders";
+import Next from './Next'
 
 class Main extends Component {
   renderArticles = () => {
@@ -23,7 +24,10 @@ class Main extends Component {
                 {this.props.main && <Leaders leaders={this.props.drivers} />}
                 <Article article={leadArticle} lead={true} />
               </div>
-              <div className="col col-md-4">{this.renderArticles()}</div>
+              <div className="col col-md-4">
+                {this.props.main && <Next race={this.props.schedule[0]}/>}
+                {this.renderArticles()}
+              </div>
             </div>
           </div>
         </div>

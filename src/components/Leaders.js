@@ -16,13 +16,22 @@ class Leaders extends Component {
 
   leader = (driver, position) => {
     return (
-      <div className="card border-primary mb-3 col col-md-4">
-        <div className="card-body">
+      <div key={position} className="card border-primary mb-3 col col-md-4">
+        <div className="card-body" style={{ textAlign: "center" }}>
           <h4>{position} Place</h4>
           <img src={driver.image} />
-          <h4 className="card-title">{driver.name}<img src={`https://www.countryflags.io/${driver.country}/flat/32.png`} /></h4>
-          <h4>{driver.car.make}</h4>
-          <h5>{driver.points} pts.</h5>
+          <div style={{textAlign: "left", paddingLeft: "8px"}}>
+            <h5 style={{margin: 0}}>
+              {driver.name.split(" ")[0]} {" "} 
+              <img style={{margin: '5px'}}
+                src={`https://www.countryflags.io/${
+                  driver.country
+                }/flat/16.png`}
+              />
+            </h5>
+            <h4>{driver.name.split(" ")[1]}</h4>
+          </div>
+          {/* <h5 style={{margin: "0px"}}>{driver.points} pts.</h5> */}
         </div>
       </div>
     );
@@ -30,15 +39,13 @@ class Leaders extends Component {
 
   showLeaders = () => {
     return this.state.leaders.map((driver, index) => {
-      return this.leader(driver, index+1);
+      return this.leader(driver, index + 1);
     });
   };
 
   render() {
     return (
-      <div
-        className="card text-white bg-primary mb-3"
-      >
+      <div className="card text-white bg-primary mb-3">
         <div className="card-header">
           <h4 className="card-title">Championship Leaders</h4>
         </div>

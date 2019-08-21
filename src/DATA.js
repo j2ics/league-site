@@ -8,6 +8,15 @@ const cars = [
   "Corvette C7.R GTE"
 ];
 
+const getRace = () => {
+    const newRace = {};
+    newRace.location = `${Faker.address.country()}`;
+    newRace.circuit = `${Faker.address.city()} Circuit`;
+    newRace.duration = `${Math.floor(Math.random()*93)} laps`;
+    newRace.date = `${Faker.date.future()}`
+    return newRace;
+}
+
 const getCar = () => {
   const car = {};
   car.model = cars[Math.floor(Math.random() * cars.length)];
@@ -15,10 +24,19 @@ const getCar = () => {
   return car;
 };
 
+const getSchedule = n => {
+    const races = [];
+    for (let i = 1; i <= n; i++) {
+      const race = getRace();
+      races.push(race);
+    }
+    return races;
+}
+
 const getArticle = () => {
   let article = {};
   article.author = `${Faker.name.firstName()} ${Faker.name.lastName()}`;
-  article.title = `${Faker.name.lastName()} wins ${Faker.address.country()} GTE Finale`;
+  article.title = `${Faker.name.lastName()} wins ${Faker.address.country()} GTE`;
   article.content = `${Faker.lorem.paragraphs()}`;
   article.date = `${Faker.date.recent()}`;
   article.image = `${Faker.image.transport()}`;
@@ -48,7 +66,8 @@ class Data {
   static getData = () => {
     return {
       articles: [getArticle(), getArticle(), getArticle(), getArticle()],
-      drivers: getDrivers(14)
+      drivers: getDrivers(14),
+      schedule: getSchedule(18)
     };
   };
 }

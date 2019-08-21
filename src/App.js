@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import logo from "./assets/img/j2ics-logo-md.png";
-
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Standings from "./components/Standings";
