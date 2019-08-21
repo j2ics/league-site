@@ -1,7 +1,7 @@
 {
   "name": "cup-series",
   "version": "0.1.0",
-  "homepage": "https://j2ics.github.io/j2ics.github.io",
+  "homepage": "https://j2ics.github.io",
   "private": true,
   "dependencies": {
     "faker": "^4.1.0",
