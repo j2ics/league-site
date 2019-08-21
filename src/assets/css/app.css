@@ -51,6 +51,12 @@
           box-sizing: border-box;
 }
 
+.spacer {
+  height: 75px;
+  background-color: var(--j2icsred)
+
+}
+
 html {
   font-family: sans-serif;
   line-height: 1.15;
@@ -74,8 +80,13 @@ body {
   line-height: 1.5;
   color: #aaa;
   text-align: left;
+  background-color:var(--j2icsgray);
+}
+
+.bg-j2ics {
   background-color: var(--j2icsgray);
 }
+
 
 [tabindex="-1"]:focus {
   outline: 0 !important;

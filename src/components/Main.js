@@ -19,13 +19,16 @@ class Main extends Component {
         <title>Latest News</title>
         <div>
           <div className="container">
+            {this.props.main ? null : <h2 style={{paddingBottom: "16px"}}>Latest News</h2>}
             <div className="row">
               <div className="col col-md-8">
-                {this.props.main && <Leaders leaders={this.props.drivers} />}
+                {this.props.main && (
+                  <Leaders leaders={this.props.drivers} />
+                )}
                 <Article article={leadArticle} lead={true} />
               </div>
               <div className="col col-md-4">
-                {this.props.main && <Next race={this.props.schedule[0]}/>}
+                {this.props.main && <Next race={this.props.schedule[0]} />}
                 {this.renderArticles()}
               </div>
             </div>
