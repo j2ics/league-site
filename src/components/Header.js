@@ -6,34 +6,33 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 class Header extends Component {
     render() {
         return <Fragment>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-                <a class="navbar-brand" href="/"><img src={logo} style={{"height": "28px"}}/></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+            <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+                <Link to="/" className="navbar-brand" href="/"><img src={logo} style={{"height": "28px"}}/></Link>
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarColor01">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Home</a>
+                <div className="collapse navbar-collapse" id="navbarColor01">
+                    <ul className="navbar-nav mr-auto">
+                        <li className="nav-item">
+                            <Link to="/" className="nav-link">Home</Link>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Standings</a>
+                        <li className="nav-item">
+                            <Link to="/standings" className="nav-link">Standings</Link>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Schedule</a>
+                        <li className="nav-item">
+                            <Link to="/schedule" className="nav-link">Schedule</Link>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Roster</a>
+                        <li className="nav-item">
+                            <Link to="/roster" className="nav-link">Roster</Link>
                         </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
+                        <li className="nav-item">
+                            <Link to="/about" className="nav-link">About</Link>
                         </li>
                     </ul>
-                    {/* <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Search" />
-                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                    {/* <form className="form-inline my-2 my-lg-0">
+                        <input className="form-control mr-sm-2" type="text" placeholder="Search" />
+                        <button className="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
                     </form> */}
                     <p>Copyright - J2ICS 2019</p>
                 </div>
