@@ -29,6 +29,7 @@ const getDriver = () => {
   let driver = {};
   driver.name = `${Faker.name.firstName()} ${Faker.name.lastName()}`;
   driver.country = `${Faker.address.countryCode()}`;
+  driver.image = `${Faker.image.avatar()}`
   driver.car = getCar();
   driver.points = Math.floor(Math.random() * 236);
   return driver;

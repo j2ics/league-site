@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import logo from "../assets/img/j2ics-logo-md.png";
 import Article from "./Article";
+import Leaders from "./Leaders";
 
 class Main extends Component {
   renderArticles = () => {
@@ -14,10 +15,12 @@ class Main extends Component {
     const leadArticle = articles[0];
     return (
       <Fragment>
+        <title>Latest News</title>
         <div>
           <div className="container">
             <div className="row">
               <div className="col col-md-8">
+                {this.props.main && <Leaders leaders={this.props.drivers} />}
                 <Article article={leadArticle} lead={true} />
               </div>
               <div className="col col-md-4">{this.renderArticles()}</div>

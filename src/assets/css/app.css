@@ -58,6 +58,10 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+img {
+  overflow: hidden;
+}
+
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block;
 }
@@ -70,7 +74,7 @@ body {
   line-height: 1.5;
   color: #aaa;
   text-align: left;
-  background-color: #272B30;
+  background-color: var(--j2icsgray);
 }
 
 [tabindex="-1"]:focus {
