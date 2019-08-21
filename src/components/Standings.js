@@ -11,6 +11,7 @@ class Standings extends Component {
     return drivers.map((driver, index) => {
       return (
         <tr key={index} className="table-primary">
+          <th scope="row">{index+1}</th>
           <th scope="row">{driver.name}</th>
           <td>{driver.points}</td>
           <td>
@@ -48,6 +49,7 @@ class Standings extends Component {
           <table className="table table-hover">
             <thead>
               <tr>
+                <th scope="col">Pos.</th>
                 <th scope="col">Driver</th>
                 <th scope="col">Points</th>
                 <th scope="col">Gap</th>
