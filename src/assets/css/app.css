@@ -83,6 +83,10 @@ body {
   background-color:var(--j2icsgray);
 }
 
+.loading {
+  text-align: center;
+}
+
 .bg-j2ics {
   background-color: var(--j2icsgray);
 }

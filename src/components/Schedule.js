@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import logo from "../assets/img/j2ics-logo-md.png";
+import LoaderHOC from '../LoaderHOC'
 import { race } from "q";
 
 class Schedule extends Component {
@@ -57,4 +58,4 @@ class Schedule extends Component {
   }
 }
 
-export default Schedule;
+export default LoaderHOC(Schedule);

@@ -5,11 +5,16 @@ import Main from "./components/Main";
 import Standings from "./components/Standings";
 import Schedule from './components/Schedule'
 import Data from "./DATA";
+import db from './Database'
 
-const DEFAULT_DATA = Data.getData();
+// const DEFAULT_DATA = Data.getData();
 
 class App extends Component {
-  state = DEFAULT_DATA;
+  state = {};
+
+  componentWillMount() {
+    db.getData().then(data => this.setState(data))
+  }
 
   render() {
     return (

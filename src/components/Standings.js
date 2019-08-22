@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import logo from "../assets/img/j2ics-logo-md.png";
+import LoaderHOC from '../LoaderHOC'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class Standings extends Component {
@@ -65,4 +66,4 @@ class Standings extends Component {
   }
 }
 
-export default Standings;
+export default LoaderHOC(Standings);

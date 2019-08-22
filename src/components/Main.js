@@ -4,6 +4,7 @@ import logo from "../assets/img/j2ics-logo-md.png";
 import Article from "./Article";
 import Leaders from "./Leaders";
 import Next from './Next'
+import LoaderHOC from '../LoaderHOC'
 
 class Main extends Component {
   renderArticles = () => {
@@ -39,4 +40,4 @@ class Main extends Component {
   }
 }
 
-export default Main;
+export default LoaderHOC(Main);

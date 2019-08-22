@@ -1,0 +1,242 @@
+{
+  "articles": [
+    {
+      "author": "Maximilian Haag",
+      "title": "Breitenberg wins Chad GTE",
+      "content": "Libero quisquam voluptas voluptates enim. Qui atque accusantium est ab voluptatem. Voluptatibus amet vel alias. Voluptates incidunt minima et eum. Assumenda perferendis dolor nemo et. Itaque explicabo accusantium eveniet deleniti non.\n \rTempore delectus ut minus sequi possimus. Est consequatur inventore nemo iste. Id at quo totam consequatur autem ipsum commodi accusantium. Repellendus non autem voluptatibus quas. Distinctio expedita sunt facere.\n \rAspernatur necessitatibus quaerat hic. Eaque labore voluptatem eaque qui fugiat eligendi ut. Rerum aliquid unde ut amet occaecati sit. Sequi iusto sint.",
+      "date": "Wed Aug 21 2019 15:32:45 GMT-0700 (Pacific Daylight Time)",
+      "image": "http://lorempixel.com/640/480/transport"
+    },
+    {
+      "author": "Armani Quigley",
+      "title": "Dooley wins Chad GTE",
+      "content": "Reiciendis maiores atque ipsum temporibus consectetur quia iusto ut. Nihil amet similique et officia. Libero delectus natus distinctio inventore magni soluta magnam et. Dolor ex quaerat aut ipsa voluptas qui. Quia doloremque sit maiores eligendi qui et dolorem qui. Omnis quidem ullam.\n \rTenetur cum explicabo minima eum expedita ducimus voluptatem saepe voluptas. Suscipit ipsam et. Blanditiis atque totam et omnis. Expedita dolor dicta totam illo quia autem. Ullam quis quis at et quis.\n \rQuaerat deleniti rerum aut tempore ducimus fugit qui. Earum molestias dolor quam qui. Nemo enim error omnis.",
+      "date": "Thu Aug 22 2019 00:38:49 GMT-0700 (Pacific Daylight Time)",
+      "image": "http://lorempixel.com/640/480/transport"
+    },
+    {
+      "author": "Caleb Luettgen",
+      "title": "Simonis wins Togo GTE",
+      "content": "Hic ex provident quia soluta voluptatem culpa labore consequuntur qui. Quia quas molestiae vero neque voluptate enim asperiores. Et molestiae id reiciendis tempora nihil exercitationem consequatur voluptas.\n \rQuas libero ullam nisi. Vitae fugit soluta ullam illum maiores vel et debitis. Qui et enim dolores sint ut sunt est consequatur optio. Ratione consectetur ut vel possimus maiores dolorum minima fugiat. Sed sunt nam nemo ea. Nihil sit itaque excepturi et et laudantium dolor qui vel.\n \rInventore mollitia ea culpa ea sed modi. Voluptas soluta ex aut sequi. Sed quibusdam impedit nobis unde cupiditate est omnis ratione. Qui et et magnam nesciunt cum dolorem laboriosam. Esse ut est animi corrupti asperiores est occaecati.",
+      "date": "Wed Aug 21 2019 09:26:16 GMT-0700 (Pacific Daylight Time)",
+      "image": "http://lorempixel.com/640/480/transport"
+    },
+    {
+      "author": "Tressie Jast",
+      "title": "Turner wins Bermuda GTE",
+      "content": "Minus ad neque dicta numquam. Laudantium asperiores hic odio quae. Et ut fuga non atque asperiores sapiente animi. Voluptatibus ea autem ullam accusamus distinctio deleniti adipisci voluptatibus. Mollitia dolorem reprehenderit placeat natus iure nihil ea officiis voluptatem. Quo nesciunt recusandae sequi ut eum earum ullam assumenda.\n \rTempora non autem exercitationem delectus sed numquam facilis accusamus. Atque porro non earum odio et iusto molestiae. Consequatur numquam aut labore eligendi unde.\n \rQuam voluptatem sint occaecati qui voluptatem quam dolor consequatur. Nam recusandae eaque. Non maxime commodi quos. Aut quis repellat non voluptates quam molestiae omnis quisquam. Sequi aliquam suscipit modi nisi ut quis quas iure.",
+      "date": "Wed Aug 21 2019 09:20:12 GMT-0700 (Pacific Daylight Time)",
+      "image": "http://lorempixel.com/640/480/transport"
+    }
+  ],
+  "drivers": [
+    {
+      "name": "Darron Jacobson",
+      "country": "BW",
+      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/chacky14/128.jpg",
+      "car": { "model": "Ford GT LM", "make": "Ford" },
+      "points": 100
+    },
+    {
+      "name": "Meagan Kuvalis",
+      "country": "MX",
+      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/timgthomas/128.jpg",
+      "car": { "model": "Porsche 911 RSR", "make": "Porsche" },
+      "points": 45
+    },
+    {
+      "name": "Jessica Brakus",
+      "country": "HN",
+      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/chanpory/128.jpg",
+      "car": { "model": "Ferrari 488 GTLM", "make": "Ferrari" },
+      "points": 35
+    },
+    {
+      "name": "Nicklaus Walsh",
+      "country": "MT",
+      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/fotomagin/128.jpg",
+      "car": { "model": "Corvette C7.R GTE", "make": "Corvette" },
+      "points": 82
+    },
+    {
+      "name": "Kelly Durgan",
+      "country": "LV",
+      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/tomaslau/128.jpg",
+      "car": { "model": "Ford GT LM", "make": "Ford" },
+      "points": 159
+    },
+    {
+      "name": "Luella Abshire",
+      "country": "SB",
+      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/okansurreel/128.jpg",
+      "car": { "model": "Ferrari 488 GTLM", "make": "Ferrari" },
+      "points": 218
+    },
+    {
+      "name": "Enos Marvin",
+      "country": "NC",
+      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/aroon_sharma/128.jpg",
+      "car": { "model": "Ferrari 488 GTLM", "make": "Ferrari" },
+      "points": 23
+    },
+    {
+      "name": "Chesley White",
+      "country": "NL",
+      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/edhenderson/128.jpg",
+      "car": { "model": "Porsche 911 RSR", "make": "Porsche" },
+      "points": 84
+    },
+    {
+      "name": "Kevon Koss",
+      "country": "GS",
+      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/blakesimkins/128.jpg",
+      "car": { "model": "BMW M6 GTLM", "make": "BMW" },
+      "points": 89
+    },
+    {
+      "name": "Archibald Walter",
+      "country": "CY",
+      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/flexrs/128.jpg",
+      "car": { "model": "Corvette C7.R GTE", "make": "Corvette" },
+      "points": 208
+    },
+    {
+      "name": "Lurline Kuhlman",
+      "country": "KI",
+      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/kylefrost/128.jpg",
+      "car": { "model": "Corvette C7.R GTE", "make": "Corvette" },
+      "points": 120
+    },
+    {
+      "name": "Dejon Jast",
+      "country": "GG",
+      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/bobwassermann/128.jpg",
+      "car": { "model": "Ford GT LM", "make": "Ford" },
+      "points": 224
+    },
+    {
+      "name": "Anastacio Weimann",
+      "country": "PT",
+      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/zforrester/128.jpg",
+      "car": { "model": "Ford GT LM", "make": "Ford" },
+      "points": 46
+    },
+    {
+      "name": "Emile Ruecker",
+      "country": "SJ",
+      "image": "https://s3.amazonaws.com/uifaces/faces/twitter/markjenkins/128.jpg",
+      "car": { "model": "Ferrari 488 GTLM", "make": "Ferrari" },
+      "points": 109
+    }
+  ],
+  "schedule": [
+    {
+      "location": "Senegal",
+      "circuit": "Simonistown Circuit",
+      "duration": "61 laps",
+      "date": "Sat Feb 22 2020"
+    },
+    {
+      "location": "New Zealand",
+      "circuit": "West Whitneystad Circuit",
+      "duration": "58 laps",
+      "date": "Mon May 04 2020"
+    },
+    {
+      "location": "Luxembourg",
+      "circuit": "Muellerchester Circuit",
+      "duration": "24 laps",
+      "date": "Sun Feb 23 2020"
+    },
+    {
+      "location": "Malaysia",
+      "circuit": "Jamisonhaven Circuit",
+      "duration": "49 laps",
+      "date": "Tue Jan 28 2020"
+    },
+    {
+      "location": "San Marino",
+      "circuit": "Lake Alyce Circuit",
+      "duration": "80 laps",
+      "date": "Tue Nov 12 2019"
+    },
+    {
+      "location": "Canada",
+      "circuit": "Artbury Circuit",
+      "duration": "80 laps",
+      "date": "Sat Nov 23 2019"
+    },
+    {
+      "location": "France",
+      "circuit": "East Wilfrid Circuit",
+      "duration": "75 laps",
+      "date": "Mon Jan 06 2020"
+    },
+    {
+      "location": "Ukraine",
+      "circuit": "East Kearafort Circuit",
+      "duration": "59 laps",
+      "date": "Sat Mar 14 2020"
+    },
+    {
+      "location": "Sri Lanka",
+      "circuit": "New D'angeloview Circuit",
+      "duration": "52 laps",
+      "date": "Tue Dec 03 2019"
+    },
+    {
+      "location": "Christmas Island",
+      "circuit": "Noemiberg Circuit",
+      "duration": "24 laps",
+      "date": "Sun Sep 22 2019"
+    },
+    {
+      "location": "Ireland",
+      "circuit": "South Shanieshire Circuit",
+      "duration": "4 laps",
+      "date": "Fri Oct 25 2019"
+    },
+    {
+      "location": "Faroe Islands",
+      "circuit": "North Doug Circuit",
+      "duration": "27 laps",
+      "date": "Wed Mar 25 2020"
+    },
+    {
+      "location": "Angola",
+      "circuit": "Cortezhaven Circuit",
+      "duration": "71 laps",
+      "date": "Tue Jan 07 2020"
+    },
+    {
+      "location": "United States of America",
+      "circuit": "Donnellfurt Circuit",
+      "duration": "33 laps",
+      "date": "Tue Jun 23 2020"
+    },
+    {
+      "location": "Bulgaria",
+      "circuit": "East Marcellus Circuit",
+      "duration": "0 laps",
+      "date": "Tue Aug 27 2019"
+    },
+    {
+      "location": "Maldives",
+      "circuit": "South Myra Circuit",
+      "duration": "53 laps",
+      "date": "Wed Feb 26 2020"
+    },
+    {
+      "location": "Cape Verde",
+      "circuit": "Arielleview Circuit",
+      "duration": "90 laps",
+      "date": "Wed Sep 11 2019"
+    },
+    {
+      "location": "New Caledonia",
+      "circuit": "Joannieside Circuit",
+      "duration": "67 laps",
+      "date": "Mon Dec 23 2019"
+    }
+  ]
+}
