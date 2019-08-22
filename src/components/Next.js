@@ -1,6 +1,4 @@
-import React, { Component, Fragment } from "react";
-import logo from "../assets/img/j2ics-logo-md.png";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import React, { Component } from "react";
 
 class Next extends Component {
   render() {

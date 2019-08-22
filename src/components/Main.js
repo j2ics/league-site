@@ -1,6 +1,4 @@
 import React, { Component, Fragment } from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import logo from "../assets/img/j2ics-logo-md.png";
 import Article from "./Article";
 import Leaders from "./Leaders";
 import Next from './Next'

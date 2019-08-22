@@ -1,28 +1,39 @@
-import React, { Component, Fragment } from "react";
-import logo from "../assets/img/j2ics-logo-md.png";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import React, { Component } from "react";
 
 class Leaders extends Component {
   constructor(props) {
     super();
     this.state = {
-      leaders: props.leaders
+      leaders: []
+    };
+  }
+
+  componentDidMount() {
+    const slicedDrivers = this.props.leaders.slice();
+
+    this.setState({
+      leaders: slicedDrivers
         .sort((a, b) => {
           return (a.points - b.points) * -1;
         })
         .slice(0, 3)
-    };
+    });
   }
 
   leader = (driver, position) => {
     return (
       <div key={position} className="col col-md-4">
         <div className="card border-primary mb-3">
-          <img className="card-image-top" src={driver.image} />
+          <img
+            alt="driver avatar"
+            className="card-image-top"
+            src={driver.image}
+          />
           <div className="card-body" style={{ textAlign: "center" }}>
             <h4>{position} Place</h4>
             <div style={{ textAlign: "left", paddingLeft: "8px" }}>
               <img
+                alt="national flag"
                 style={{ margin: "5px" }}
                 src={`https://www.countryflags.io/${
                   driver.country

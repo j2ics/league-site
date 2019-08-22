@@ -1,6 +1,4 @@
 import React, { Component, Fragment } from "react";
-import logo from "../assets/img/j2ics-logo-md.png";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class Article extends Component {
   render() {
@@ -14,7 +12,7 @@ class Article extends Component {
           <div className="card-body">
             {this.props.lead ? (
                 <Fragment>
-                <img className="card-img-top" src={image} alt="Card image cap" />
+                <img className="card-img-top" src={image} alt="Card cap" />
                 <p className="card-text">by {author}</p>
                 <p className="card-text">{date}</p>
               </Fragment>

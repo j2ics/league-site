@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import logo from "../assets/img/j2ics-logo-md.png";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class Header extends Component {
   render() {
@@ -8,7 +8,7 @@ class Header extends Component {
       <Fragment>
         <nav className="navbar navbar-expand-lg navbar-dark bg-j2ics">
           <Link to="/" className="navbar-brand" href="/">
-            <img src={logo} style={{ height: "28px" }} />
+            <img alt="league logo" src={logo} style={{ height: "28px" }} />
           </Link>
           <button
             className="navbar-toggler"
@@ -53,11 +53,9 @@ class Header extends Component {
                 </Link>
               </li>
             </ul>
-            {/* <form className="form-inline my-2 my-lg-0">
-                        <input className="form-control mr-sm-2" type="text" placeholder="Search" />
-                        <button className="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                    </form> */}
-            <p>Copyright - J2ICS 2019</p>
+            <p>
+              <Link to="/admin">Copyright - J2ICS 2019</Link>
+            </p>
           </div>
         </nav>
         <div className="spacer" />

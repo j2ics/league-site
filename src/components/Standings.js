@@ -1,18 +1,18 @@
 import React, { Component, Fragment } from "react";
 import logo from "../assets/img/j2ics-logo-md.png";
-import LoaderHOC from '../LoaderHOC'
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import LoaderHOC from "../LoaderHOC";
 
 class Standings extends Component {
   getDrivers = () => {
-    const drivers = this.props.drivers.sort((a, b) => {
+    const slicedDrivers = this.props.drivers.slice();
+    const drivers = slicedDrivers.sort((a, b) => {
       return (a.points - b.points) * -1;
     });
     const leaderPoints = drivers[0].points;
     return drivers.map((driver, index) => {
       return (
         <tr key={index} className="table-primary">
-          <th scope="row">{index+1}</th>
+          <th scope="row">{index + 1}</th>
           <th scope="row">{driver.name}</th>
           <td>{driver.points}</td>
           <td>
@@ -39,11 +39,10 @@ class Standings extends Component {
   render() {
     return (
       <Fragment>
-
-          <title>Standings</title>
+        <title>Standings</title>
         <div className="container">
           <div style={{ textAlign: "center" }}>
-            <img src={logo} style={{ height: "95px" }} />
+            <img alt="league logo" src={logo} style={{ height: "95px" }} />
             <h2>2019 Driver Standings:</h2>
           </div>
           <table className="table table-hover">

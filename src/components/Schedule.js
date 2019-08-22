@@ -1,18 +1,23 @@
 import React, { Component, Fragment } from "react";
 import logo from "../assets/img/j2ics-logo-md.png";
-import LoaderHOC from '../LoaderHOC'
-import { race } from "q";
+import LoaderHOC from "../LoaderHOC";
 
 class Schedule extends Component {
   renderRace = (race, index) => {
-      console.log(race)
     return (
-      <tr className={`table-${index % 2 === 0 ? "primary" : "secondary"}`}>
+      <tr
+        key={index}
+        className={`table-${index % 2 === 0 ? "primary" : "secondary"}`}
+      >
         <th scope="row">{index + 1}</th>
         <td>{race.date}</td>
         <td>
           {race.location}{" "}
-          {`${index % 2 === 0 ? "GTE Challenge" : `GT ${Math.floor(Math.random()*500)}`}`}
+          {`${
+            index % 2 === 0
+              ? "GTE Challenge"
+              : `GT ${Math.floor(Math.random() * 500)}`
+          }`}
         </td>
         <td>{race.circuit}</td>
         <td>{race.duration}</td>
@@ -21,9 +26,13 @@ class Schedule extends Component {
   };
 
   renderSeason = () => {
-    return this.props.schedule.sort((a,b) => {return a.date-b.date}).map((race, index) => {
-      return this.renderRace(race, index)
-    });
+    return this.props.schedule
+      .sort((a, b) => {
+        return a.date - b.date;
+      })
+      .map((race, index) => {
+        return this.renderRace(race, index);
+      });
   };
 
   render() {
@@ -34,7 +43,7 @@ class Schedule extends Component {
 
         <div className="container">
           <div style={{ textAlign: "center" }}>
-            <img src={logo} style={{ height: "95px" }} />
+            <img alt="league logo" src={logo} style={{ height: "95px" }} />
             <h2>2019 Season Schedule:</h2>
           </div>
 
@@ -48,9 +57,7 @@ class Schedule extends Component {
                 <th scope="col">Length</th>
               </tr>
             </thead>
-            <tbody>
-                {this.renderSeason()}
-            </tbody>
+            <tbody>{this.renderSeason()}</tbody>
           </table>
         </div>
       </Fragment>
