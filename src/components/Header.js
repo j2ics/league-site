@@ -54,7 +54,7 @@ class Header extends Component {
               </li>
             </ul>
             <p>
-              <Link to="/admin">Copyright - J2ICS 2019</Link>
+              <p>Copyright - J2ICS 2019</p>
             </p>
           </div>
         </nav>

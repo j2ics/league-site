@@ -5,13 +5,9 @@ import LoaderHOC from "../LoaderHOC";
 class Roster extends Component {
   driverCard = driver => {
     return (
-      <div className="col col-md-3">
+      <div className="col col-md-3" style={{paddingBottom: "15px"}}>
         <div class="card">
-          <img
-            class="card-img-top"
-            src={driver.image}
-            alt="Card image cap"
-          />
+          <img class="card-img-top" src={driver.image} alt="Card image cap" />
           <div class="card-body">
             <h5 class="card-title">{driver.name}</h5>
             <img
@@ -24,11 +20,6 @@ class Roster extends Component {
             <li class="list-group-item">{driver.car.model}</li>
             <li class="list-group-item">2019 points: {driver.points}</li>
           </ul>
-          <div class="card-body">
-            <a href="#" class="card-link">
-              Season Results
-            </a>
-          </div>
         </div>
       </div>
     );

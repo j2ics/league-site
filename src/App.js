@@ -6,9 +6,6 @@ import Standings from "./components/Standings";
 import Schedule from "./components/Schedule";
 import Roster from "./components/Roster";
 import db from "./Database";
-import Admin from "./components/Admin";
-
-// const DEFAULT_DATA = Data.getData();
 
 class App extends Component {
   state = {};
@@ -47,7 +44,6 @@ class App extends Component {
               render={() => <Schedule {...this.state} />}
             />
             <Route path="/roster" render={() => <Roster {...this.state} />} />
-            <Route path="/admin" component={Admin} />
           </div>
         </Router>
       </div>
