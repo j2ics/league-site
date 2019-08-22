@@ -53,8 +53,7 @@
 
 .spacer {
   height: 75px;
-  background-color: var(--j2icsred)
-
+  background-image: linear-gradient(to right,  var(--j2icsgray), var(--j2icsred), var(--j2icsred) , var(--j2icsgray));
 }
 
 html {

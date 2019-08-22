@@ -10,9 +10,9 @@ class Article extends Component {
             <h4 className="card-title">{title}</h4>
           </div>
           <div className="card-body">
+            <img className="card-img-top" src={image} alt="Card cap" />
             {this.props.lead ? (
                 <Fragment>
-                <img className="card-img-top" src={image} alt="Card cap" />
                 <p className="card-text">by {author}</p>
                 <p className="card-text">{date}</p>
               </Fragment>
