@@ -22,27 +22,19 @@ class Leaders extends Component {
 
   leader = (driver, position) => {
     return (
-      <div key={position} className="col col-md-4">
-        <div className="card border-primary mb-3">
-          <img
-            alt="driver avatar"
-            className="card-image-top"
-            src={driver.image}
-          />
-          <div className="card-body" style={{ textAlign: "center" }}>
-            <h4>{position} Place</h4>
-            <div style={{ textAlign: "left", paddingLeft: "8px" }}>
-              <img
-                alt="national flag"
-                style={{ margin: "5px" }}
-                src={`https://www.countryflags.io/${
-                  driver.country
-                }/flat/32.png`}
-              />
-              <h5 style={{ margin: 0 }}>{driver.name.split(" ")[0]} </h5>
-              <h4>{driver.name.split(" ")[1]}</h4>
-            </div>
-            {/* <h5 style={{margin: "0px"}}>{driver.points} pts.</h5> */}
+      <div key={position} className="col col-md-4" style={{ paddingBottom: "15px" }}>
+        <h3>{position}</h3>
+        <h5>{driver.points} Points</h5>
+        <div className="card">
+          <img className="card-img-top" src={driver.image} alt="Card cap" />
+          <div className="card-body">
+            <h5 className="card-title">{driver.name}</h5>
+            <img
+              alt="flag"
+              className="card-text"
+              src={`https://www.countryflags.io/${driver.country}/flat/64.png`}
+            />
+            <h5>{driver.car.make}</h5>
           </div>
         </div>
       </div>

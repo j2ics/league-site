@@ -3,22 +3,23 @@ import logo from "../assets/img/j2ics-logo-md.png";
 import LoaderHOC from "../LoaderHOC";
 
 class Roster extends Component {
-  driverCard = driver => {
+  driverCard = (driver, idx) => {
     return (
-      <div className="col col-md-3" style={{paddingBottom: "15px"}}>
-        <div class="card">
-          <img class="card-img-top" src={driver.image} alt="Card image cap" />
-          <div class="card-body">
-            <h5 class="card-title">{driver.name}</h5>
+      <div key={idx} className="col col-md-3" style={{ paddingBottom: "15px" }}>
+        <div className="card">
+          <img className="card-img-top" src={driver.image} alt="Card cap" />
+          <div className="card-body">
+            <h5 className="card-title">{driver.name}</h5>
             <img
-              class="card-text"
+              alt="flag"
+              className="card-text"
               src={`https://www.countryflags.io/${driver.country}/flat/64.png`}
             />
             <h5>{driver.car.make}</h5>
           </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">{driver.car.model}</li>
-            <li class="list-group-item">2019 points: {driver.points}</li>
+          <ul className="list-group list-group-flush">
+            <li className="list-group-item">{driver.car.model}</li>
+            <li className="list-group-item">2019 points: {driver.points}</li>
           </ul>
         </div>
       </div>
@@ -28,7 +29,7 @@ class Roster extends Component {
   renderDrivers = () => {
     const { drivers } = this.props;
     return drivers.map((driver, index) => {
-      return this.driverCard(driver);
+      return this.driverCard(driver, index);
     });
   };
 

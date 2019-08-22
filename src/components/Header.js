@@ -53,9 +53,8 @@ class Header extends Component {
                 </Link>
               </li>
             </ul>
-            <p>
-              <p>Copyright - J2ICS 2019</p>
-            </p>
+
+            <p>Copyright - J2ICS 2019</p>
           </div>
         </nav>
         <div className="spacer" />

@@ -5,6 +5,7 @@ import Main from "./components/Main";
 import Standings from "./components/Standings";
 import Schedule from "./components/Schedule";
 import Roster from "./components/Roster";
+import About from "./components/About";
 import db from "./Database";
 
 class App extends Component {
@@ -44,6 +45,7 @@ class App extends Component {
               render={() => <Schedule {...this.state} />}
             />
             <Route path="/roster" render={() => <Roster {...this.state} />} />
+            <Route path="/about" component={About} />
           </div>
         </Router>
       </div>

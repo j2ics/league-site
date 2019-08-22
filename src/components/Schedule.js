@@ -11,14 +11,7 @@ class Schedule extends Component {
       >
         <th scope="row">{index + 1}</th>
         <td>{race.date}</td>
-        <td>
-          {race.location}{" "}
-          {`${
-            index % 2 === 0
-              ? "GTE Challenge"
-              : `GT ${Math.floor(Math.random() * 500)}`
-          }`}
-        </td>
+        <td>{race.location}</td>
         <td>{race.circuit}</td>
         <td>{race.duration}</td>
       </tr>
@@ -52,7 +45,7 @@ class Schedule extends Component {
               <tr>
                 <th scope="col">Round</th>
                 <th scope="col">Date</th>
-                <th scope="col">Location</th>
+                <th scope="col">Race</th>
                 <th scope="col">Circuit</th>
                 <th scope="col">Length</th>
               </tr>

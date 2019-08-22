@@ -9,7 +9,7 @@ class Next extends Component {
           <h3>Next race:</h3>
         </div>
         <div className="card-body">
-          <h4 className="card-title">{location} GTE Challenge</h4>
+          <h4 className="card-title">{location}</h4>
           <h5>{circuit}</h5>
           <p className="card-text">{date}</p>
           <p>{duration}</p>
