@@ -38,9 +38,8 @@ class Standings extends Component {
   render() {
     return (
       <Fragment>
-        <head>
+
           <title>Standings</title>
-        </head>
         <div className="container">
           <div style={{ textAlign: "center" }}>
             <img src={logo} style={{ height: "95px" }} />

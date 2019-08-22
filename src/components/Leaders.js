@@ -16,22 +16,25 @@ class Leaders extends Component {
 
   leader = (driver, position) => {
     return (
-      <div key={position} className="card border-primary mb-3 col col-md-4">
-        <div className="card-body" style={{ textAlign: "center" }}>
-          <h4>{position} Place</h4>
-          <img src={driver.image} />
-          <div style={{textAlign: "left", paddingLeft: "8px"}}>
-            <h5 style={{margin: 0}}>
-              {driver.name.split(" ")[0]} {" "} 
-              <img style={{margin: '5px'}}
-                src={`https://www.countryflags.io/${
-                  driver.country
-                }/flat/16.png`}
-              />
-            </h5>
-            <h4>{driver.name.split(" ")[1]}</h4>
+      <div className="col col-md-4">
+        <div key={position} className="card border-primary mb-3">
+          <img className="card-image-top" src={driver.image} />
+          <div className="card-body" style={{ textAlign: "center" }}>
+            <h4>{position} Place</h4>
+            <div style={{ textAlign: "left", paddingLeft: "8px" }}>
+                <img
+                  style={{ margin: "5px" }}
+                  src={`https://www.countryflags.io/${
+                    driver.country
+                  }/flat/32.png`}
+                />
+              <h5 style={{ margin: 0 }}>
+                {driver.name.split(" ")[0]}{" "}
+              </h5>
+              <h4>{driver.name.split(" ")[1]}</h4>
+            </div>
+            {/* <h5 style={{margin: "0px"}}>{driver.points} pts.</h5> */}
           </div>
-          {/* <h5 style={{margin: "0px"}}>{driver.points} pts.</h5> */}
         </div>
       </div>
     );
