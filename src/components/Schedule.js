@@ -41,14 +41,14 @@ class Schedule extends Component {
         <div className="container">
           <div style={{ textAlign: "center" }}>
             <img alt="league logo" src={logo} style={{ height: "95px" }} />
-            <br></br>
+            <br />
             <select
               className="btn btn-primary btn-large"
               value={this.state.selectedYear}
               onChange={e => this.setState({ selectedYear: e.target.value })}
             >
               {Object.keys(this.props.schedule).map((key, index) => {
-                return <option key={index}>{key}</option>
+                return <option key={index}>{key}</option>;
               })}
             </select>
             <h2>{this.state.selectedYear} Season Schedule:</h2>

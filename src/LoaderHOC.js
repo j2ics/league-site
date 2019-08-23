@@ -3,10 +3,9 @@ import Loading from "./components/Loading";
 
 const LoaderHOC = WrappedComponent => {
   return class LoaderHOC extends Component {
-
-isReady = () => {
-  return (this.props.articles && this.props.drivers && this.props.schedule)
-}
+    isReady = () => {
+      return this.props.articles && this.props.drivers && this.props.schedule;
+    };
 
     render() {
       if (this.isReady()) {

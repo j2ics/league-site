@@ -4,16 +4,15 @@ import db from "../Database";
 class Post extends Component {
   handleSubmit = e => {
     e.preventDefault();
-    console.log(e.target.author.value)
+    console.log(e.target.author.value);
     const newPost = {
-        title: e.target.title.value,
-        author: e.target.author.value,
-        image: e.target.image.value,
-        content: e.target.content.value,
-        date: new Date().toDateString()
-    }
-    db.postArticle(newPost)
-
+      title: e.target.title.value,
+      author: e.target.author.value,
+      image: e.target.image.value,
+      content: e.target.content.value,
+      date: new Date().toDateString()
+    };
+    db.postArticle(newPost);
   };
   render() {
     return (

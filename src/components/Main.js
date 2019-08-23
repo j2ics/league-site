@@ -7,13 +7,16 @@ import LoaderHOC from "../LoaderHOC";
 class Main extends Component {
   renderArticles = () => {
     return Object.values(this.props.articles)
-      .reverse().slice(1)
+      .reverse()
+      .slice(1)
       .map((article, index) => {
         return <Article key={index} article={article} lead={false} />;
       });
   };
   render() {
-    const leadArticle = Object.values(this.props.articles)[Object.values(this.props.articles).length - 1];
+    const leadArticle = Object.values(this.props.articles)[
+      Object.values(this.props.articles).length - 1
+    ];
     return (
       <Fragment>
         <title>Latest News</title>
