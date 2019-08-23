@@ -55,7 +55,7 @@ class Roster extends Component {
       <div
         className="modal fade"
         id="exampleModal"
-        tabindex="-1"
+        tabIndex="-1"
         role="dialog"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
@@ -65,6 +65,7 @@ class Roster extends Component {
             <div className="modal-header">
               <h4 className="modal-title" id="exampleModalLabel">
                 <img
+                  alt="nataional flag"
                   src={`https://www.countryflags.io/${
                     currentDriver.country
                   }/flat/32.png`}
@@ -81,7 +82,11 @@ class Roster extends Component {
               </button>
             </div>
             <div className="modal-body">
-              <img className="img-fluid" src={currentDriver.image} />
+              <img
+                className="img-fluid"
+                alt="driver"
+                src={currentDriver.image}
+              />
               <ul className="list-group list-group-flush">
                 <li className="list-group-item">
                   Team: <h4>{currentDriver.car.make}</h4>

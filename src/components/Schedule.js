@@ -47,8 +47,9 @@ class Schedule extends Component {
               value={this.state.selectedYear}
               onChange={e => this.setState({ selectedYear: e.target.value })}
             >
-              <option>2019</option>
-              <option>2020</option>
+              {Object.keys(this.props.schedule).map((key, index) => {
+                return <option key={index}>{key}</option>
+              })}
             </select>
             <h2>{this.state.selectedYear} Season Schedule:</h2>
           </div>

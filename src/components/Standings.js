@@ -54,7 +54,7 @@ class Standings extends Component {
                 <th scope="col">Gap</th>
                 <th scope="col">Team</th>
                 <th scope="col">Country</th>
-                <th scope="col">Car</th>
+                <th scope="col">Chassis</th>
               </tr>
             </thead>
             <tbody>{this.getDrivers()}</tbody>
