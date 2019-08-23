@@ -8,21 +8,26 @@ class Leaders extends Component {
     };
   }
 
-  componentDidMount() {
-    const slicedDrivers = this.props.leaders.slice();
+  getTopDrivers = () => {
+    const drivers = Object.values(this.props.leaders);
+    return drivers
+      .sort((a, b) => {
+        return b.points - a.points;
+      })
+      .slice(0, 3);
+  };
 
-    this.setState({
-      leaders: slicedDrivers
-        .sort((a, b) => {
-          return (a.points - b.points) * -1;
-        })
-        .slice(0, 3)
-    });
+  componentDidMount() {
+    this.setState({ leaders: this.getTopDrivers() });
   }
 
   leader = (driver, position) => {
     return (
-      <div key={position} className="col col-md-4" style={{ paddingBottom: "15px" }}>
+      <div
+        key={position}
+        className="col col-md-4"
+        style={{ paddingBottom: "15px" }}
+      >
         <h3>{position}</h3>
         <h5>{driver.points} Points</h5>
         <div className="card">

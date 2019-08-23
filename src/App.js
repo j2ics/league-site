@@ -6,21 +6,22 @@ import Standings from "./components/Standings";
 import Schedule from "./components/Schedule";
 import Roster from "./components/Roster";
 import About from "./components/About";
+import Post from "./components/Post";
 import db from "./Database";
-// import Data from "./DATA";
+import Data from "./DATA";
 
 class App extends Component {
-  // state = { ...Data.getData() };
+  state = { ...Data.getData() };
 
-  state = {};
+  // state = {};
 
-  componentDidMount() {
-    this.getData();
-  }
+  // componentDidMount() {
+  //   this.getData();
+  // }
 
-  getData = () => {
-    db.getData().then(data => this.setState(data));
-  };
+  // getData = () => {
+  //   db.getData().then(data => this.setState(data));
+  // };
 
   render() {
     return (
@@ -49,6 +50,7 @@ class App extends Component {
             />
             <Route path="/drivers" render={() => <Roster {...this.state} />} />
             <Route path="/about" component={About} />
+            <Route path="/new" component={Post} />
           </div>
         </Router>
       </div>

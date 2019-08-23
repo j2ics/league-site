@@ -23,7 +23,7 @@ class Schedule extends Component {
   };
 
   renderSeason = () => {
-    return this.props.schedule[this.state.selectedYear]
+    return Object.values(this.props.schedule[this.state.selectedYear])
       .sort((a, b) => {
         return a.date - b.date;
       })

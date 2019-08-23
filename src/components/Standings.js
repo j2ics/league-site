@@ -4,7 +4,7 @@ import LoaderHOC from "../LoaderHOC";
 
 class Standings extends Component {
   getDrivers = () => {
-    const slicedDrivers = this.props.drivers.slice();
+    const slicedDrivers = Object.values(this.props.drivers).slice();
     const drivers = slicedDrivers.sort((a, b) => {
       return (a.points - b.points) * -1;
     });

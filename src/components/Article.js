@@ -1,7 +1,9 @@
 import React, { Component, Fragment } from "react";
+import LoaderHOC from '../LoaderHOC'
 
 class Article extends Component {
   render() {
+    console.log(this.props)
     const { author, image, content, date, title } = this.props.article;
     return (
       <Fragment>
