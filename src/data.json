@@ -144,24 +144,27 @@
       "points": 21
     }
   ],
-  "schedule": [
-    {
-      "circuit": "Texas Motorspeedway",
-      "date": "August 27, 9:00pm CST",
-      "duration": "151 laps",
-      "location": "2019 Texas GTE Shootout"
-    },
-    {
-      "circuit": "Mazda Raceway Laguna Seca",
-      "date": "TBD",
-      "duration": "90 minutes",
-      "location": "2019 Lateena Sehks GP"
-    },
-    {
-      "circuit": "Nürburgring Combined",
-      "date": "TBD",
-      "duration": "2 Hours",
-      "location": "2019 Green E G G S in Hell"
-    }
-  ]
+  "schedule": {
+    "2019": [
+      {
+        "circuit": "Texas Motorspeedway",
+        "date": "August 27, 9:00pm CST",
+        "duration": "151 laps",
+        "location": "2019 Texas GTE Shootout"
+      },
+      {
+        "circuit": "Mazda Raceway Laguna Seca",
+        "date": "TBD",
+        "duration": "90 minutes",
+        "location": "2019 Lateena Sehks GP"
+      },
+      {
+        "circuit": "Nürburgring Combined",
+        "date": "TBD",
+        "duration": "2 Hours",
+        "location": "2019 Green E G G S in Hell"
+      }
+    ],
+    "2020": []
+  }
 }

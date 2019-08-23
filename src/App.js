@@ -10,17 +10,17 @@ import db from "./Database";
 import Data from "./DATA";
 
 class App extends Component {
-  // state = Data.getData();
+  state = { ...Data.getData() };
 
-  state = {};
+  // state = {};
 
-  componentDidMount() {
-    this.getData();
-  }
+  // componentDidMount() {
+  //   this.getData();
+  // }
 
-  getData = () => {
-    db.getData().then(data => this.setState(data));
-  };
+  // getData = () => {
+  //   db.getData().then(data => this.setState(data));
+  // };
 
   render() {
     return (
@@ -47,7 +47,7 @@ class App extends Component {
               path="/schedule"
               render={() => <Schedule {...this.state} />}
             />
-            <Route path="/roster" render={() => <Roster {...this.state} />} />
+            <Route path="/drivers" render={() => <Roster {...this.state} />} />
             <Route path="/about" component={About} />
           </div>
         </Router>

@@ -19,7 +19,7 @@ class Roster extends Component {
       >
         <div className="card">
           <img className="card-img-top" src={driver.image} alt="Card cap" />
-          <div className="card-body">
+          <div className="card-body list-group-item">
             <h5 className="card-title">{driver.name}</h5>
             <img
               alt="flag"
@@ -34,9 +34,19 @@ class Roster extends Component {
 
   renderDrivers = () => {
     const { drivers } = this.props;
-    return drivers.map((driver, index) => {
-      return this.driverCard(driver, index);
-    });
+    return drivers
+      .sort((a, b) => {
+        if (a.name.toLowerCase() < b.name.toLowerCase()) {
+          return -1;
+        }
+        if (a.name.toLowerCase() > b.name.toLowerCase()) {
+          return 1;
+        }
+        return 0;
+      })
+      .map((driver, index) => {
+        return this.driverCard(driver, index);
+      });
   };
 
   renderModal = () => {
@@ -54,7 +64,12 @@ class Roster extends Component {
           <div className="modal-content">
             <div className="modal-header">
               <h4 className="modal-title" id="exampleModalLabel">
-                <img src={`https://www.countryflags.io/${currentDriver.country}/flat/32.png`}/> {currentDriver.name}
+                <img
+                  src={`https://www.countryflags.io/${
+                    currentDriver.country
+                  }/flat/32.png`}
+                />{" "}
+                {currentDriver.name}
               </h4>
               <button
                 type="button"
