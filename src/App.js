@@ -6,22 +6,23 @@ import Standings from "./components/Standings";
 import Schedule from "./components/Schedule";
 import Roster from "./components/Roster";
 import About from "./components/About";
+import Latest from './components/Latest'
 import Post from "./components/Post";
 import db from "./Database";
-// import Data from "./DATA";
+import Data from "./DATA";
 
 class App extends Component {
-  // state = { ...Data.getData() };
+  state = { ...Data.getData() };
 
-  state = {};
+  // state = {};
 
-  componentDidMount() {
-    this.getData();
-  }
+  // componentDidMount() {
+  //   this.getData();
+  // }
 
-  getData = () => {
-    db.getData().then(data => this.setState(data));
-  };
+  // getData = () => {
+  //   db.getData().then(data => this.setState(data));
+  // };
 
   render() {
     return (
@@ -39,7 +40,7 @@ class App extends Component {
                 </div>
               )}
             />
-            <Route path="/latest" render={() => <Main {...this.state} />} />
+            <Route path="/latest" render={() => <Latest {...this.state} main={false}/>} />
             <Route
               path="/standings"
               render={() => <Standings {...this.state} />}
