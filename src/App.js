@@ -9,20 +9,20 @@ import About from "./components/About";
 import Latest from './components/Latest'
 import Post from "./components/Post";
 import db from "./Database";
-import Data from "./DATA";
+// import Data from "./DATA";
 
 class App extends Component {
-  state = { ...Data.getData() };
+  // state = { ...Data.getData() };
 
-  // state = {};
+  state = {};
 
-  // componentDidMount() {
-  //   this.getData();
-  // }
+  componentDidMount() {
+    this.getData();
+  }
 
-  // getData = () => {
-  //   db.getData().then(data => this.setState(data));
-  // };
+  getData = () => {
+    db.getData().then(data => this.setState(data));
+  };
 
   render() {
     return (
