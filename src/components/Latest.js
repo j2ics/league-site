@@ -10,7 +10,7 @@ class Latest extends Component {
       .reverse()
       .slice(0, 10)
       .map((article, index) => {
-          return <Article key={index} article={article} lead={false} />
+          return <Article key={index} article={article} lead={true} />
       });
   };
   render() {
@@ -24,7 +24,7 @@ class Latest extends Component {
           <div className="container">
             <h2 style={{ paddingBottom: "16px" }}>Latest News</h2>
             <div className="row">
-              <div className="col col-md-12">
+              <div className="col col-md-9">
                 {this.renderArticles()}
               </div>
             </div>
