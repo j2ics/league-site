@@ -5,14 +5,12 @@ import Next from "./Next";
 import LoaderHOC from "../LoaderHOC";
 
 class Latest extends Component {
-  renderArticles = marker => {
+  renderArticles = () => {
     return Object.values(this.props.articles)
       .reverse()
       .slice(0, 10)
       .map((article, index) => {
-        return index % 2 == marker ? (
-          <Article key={index} article={article} lead={false} />
-        ) : null;
+          return <Article key={index} article={article} lead={false} />
       });
   };
   render() {
@@ -26,11 +24,8 @@ class Latest extends Component {
           <div className="container">
             <h2 style={{ paddingBottom: "16px" }}>Latest News</h2>
             <div className="row">
-              <div className="col col-md-8">
-                {this.renderArticles(0)}
-              </div>
-              <div className="col col-md-4">
-                {this.renderArticles(1)}
+              <div className="col col-md-12">
+                {this.renderArticles()}
               </div>
             </div>
           </div>
