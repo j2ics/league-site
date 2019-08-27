@@ -18,7 +18,7 @@ class Roster extends Component {
         onClick={() => this.setState({ currentDriver: driver })}
       >
         <div className="card">
-          <img className="card-img-top" src={driver.image} alt="Card cap" />
+          <img className="profile-img-top" src={driver.image} alt="Card cap" />
           <div className="card-body list-group-item">
             <h5 className="card-title">{driver.name}</h5>
             <img
