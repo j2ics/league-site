@@ -4,6 +4,7 @@ import Loading from "./Loading";
 const About = () => {
   return (
     <div style={{ textAlign: "center" }}>
+      <title>About</title>
       <div className="container">
         <div className="jumbotron">
           <p>The Just 2 Idiots Cup series is an online racing series.</p>

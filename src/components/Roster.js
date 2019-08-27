@@ -118,7 +118,7 @@ class Roster extends Component {
     return (
       <Fragment>
         {this.renderModal()}
-        <title>Standings</title>
+        <title>Driver Roster</title>
         <div className="container">
           <div style={{ textAlign: "center" }}>
             <img alt="league logo" src={logo} style={{ height: "65px" }} />
