@@ -66,9 +66,7 @@ class Roster extends Component {
               <h4 className="modal-title" id="exampleModalLabel">
                 <img
                   alt="nataional flag"
-                  src={`https://www.countryflags.io/${
-                    currentDriver.country
-                  }/flat/32.png`}
+                  src={`https://www.countryflags.io/${currentDriver.country}/flat/32.png`}
                 />{" "}
                 {currentDriver.name}
               </h4>
@@ -82,22 +80,28 @@ class Roster extends Component {
               </button>
             </div>
             <div className="modal-body">
-              <img
-                className="img-fluid"
-                alt="driver"
-                src={currentDriver.image}
-              />
-              <ul className="list-group list-group-flush">
-                <li className="list-group-item">
-                  Team: <h4>{currentDriver.car.make}</h4>
-                </li>
-                <li className="list-group-item">
-                  Chassis: <h5>{currentDriver.car.model}</h5>
-                </li>
-                <li className="list-group-item">
-                  2019 points: <h5>{currentDriver.points}</h5>
-                </li>
-              </ul>
+              <div className="row">
+                <div className="col-md-5">
+                  <img
+                    className="img-fluid profile-img"
+                    alt="driver"
+                    src={currentDriver.image}
+                  />
+                </div>
+                <div className="col-md-7">
+                  <ul className="list-group list-group-flush">
+                    <li className="list-group-item">
+                      Team: <h4>{currentDriver.car.make}</h4>
+                    </li>
+                    <li className="list-group-item">
+                      Chassis: <h5>{currentDriver.car.model}</h5>
+                    </li>
+                    <li className="list-group-item">
+                      2019 points: <h5>{currentDriver.points}</h5>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
             <div className="modal-footer">
               <button
