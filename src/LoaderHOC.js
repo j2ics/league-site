@@ -10,6 +10,7 @@ const LoaderHOC = WrappedComponent => {
     render() {
       if (this.isReady()) {
         return <WrappedComponent {...this.props} />;
+        // return <Loading />;
       } else {
         return <Loading />;
       }

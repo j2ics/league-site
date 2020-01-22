@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import db from "../Database";
+import db from "../services/database";
 
 class Post extends Component {
   handleSubmit = e => {

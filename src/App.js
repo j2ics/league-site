@@ -6,15 +6,14 @@ import Standings from "./components/Standings";
 import Schedule from "./components/Schedule";
 import Roster from "./components/Roster";
 import About from "./components/About";
-import Latest from './components/Latest'
+import Latest from "./components/Latest";
 import Post from "./components/Post";
-import db from "./Database";
-// import Data from "./DATA";
+import db from "./services/database";
+import DriverForm from "./components/FormComponents/DriverForm";
 
 class App extends Component {
-  // state = { ...Data.getData() };
 
-  state = {};
+  state = { admin: false, drivers: { sdafasd: {} } };
 
   componentDidMount() {
     this.getData();
@@ -22,11 +21,22 @@ class App extends Component {
 
   getData = () => {
     db.getData().then(data => this.setState(data));
-  };
 
+    //modify all drivers, for quick db updates
+    db.getAllDrivers().then(drivers => {
+      console.log(drivers);
+      Object.keys(drivers).map(driverId => {
+        const driver = drivers[driverId];
+        let newDriver = { ...driver };
+        // db.removeDriver(driverId);
+        // db.addNewDriver({ ...newDriver });
+      });
+    });
+  };
   render() {
     return (
       <div>
+        <DriverForm driverKey={Object.keys(this.state.drivers)[1]} />
         <Router>
           <Header />
           <div style={{ paddingTop: "18px" }}>
@@ -40,7 +50,10 @@ class App extends Component {
                 </div>
               )}
             />
-            <Route path="/latest" render={() => <Latest {...this.state} main={false}/>} />
+            <Route
+              path="/latest"
+              render={() => <Latest {...this.state} main={false} />}
+            />
             <Route
               path="/standings"
               render={() => <Standings {...this.state} />}

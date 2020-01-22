@@ -39,7 +39,6 @@ class Leaders extends Component {
               className="card-text"
               src={`https://www.countryflags.io/${driver.country}/flat/64.png`}
             />
-            <h5>{driver.car.make}</h5>
           </div>
         </div>
       </div>
