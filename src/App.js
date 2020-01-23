@@ -13,7 +13,7 @@ import DriverForm from "./components/FormComponents/DriverForm";
 
 class App extends Component {
 
-  state = { admin: false, drivers: { sdafasd: {} } };
+  state = { admin: false };
 
   componentDidMount() {
     this.getData();
@@ -36,7 +36,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <DriverForm driverKey={Object.keys(this.state.drivers)[1]} />
+        {this.state.drivers?<DriverForm driverKey={Object.keys(this.state.drivers)[2]} />:null }
         <Router>
           <Header />
           <div style={{ paddingTop: "18px" }}>

@@ -10,14 +10,12 @@ class DriverForm extends React.Component {
     _team_id: 0
   };
 
-  componentWillReceiveProps() {
-    console.log(this.props)
-    if (!!this.props.driverKey) {
-      db.getDriver(this.props.driverKey).then(driver => {
+  static getDerivedStateFromProps(newProps) {
+    console.log(newProps);
+      return db.getDriver(newProps.driverKey).then(driver => {
         console.log(driver);
-        this.setState(driver);
+        return {...driver};
       });
-    }
   }
 
   handleChange = e => {
