@@ -8,12 +8,12 @@ import Roster from "./components/Roster";
 import About from "./components/About";
 import Latest from "./components/Latest";
 import Post from "./components/Post";
+import { LoginForm } from "./components/FormComponents/LoginForm";
 import db from "./services/database";
 import DriverForm from "./components/FormComponents/DriverForm";
 
 class App extends Component {
-
-  state = { admin: false };
+  state = { admin: false, login: false };
 
   componentDidMount() {
     this.getData();
@@ -33,12 +33,36 @@ class App extends Component {
       });
     });
   };
+  toggleLogin = () => {
+    this.setState({ login: !this.state.login });
+  };
+  updateDriver = payload => {
+    db.updateDriver(payload);
+  };
+  login = pass => {
+    db.checkPassword(pass).then(res => {
+      if (res) {
+        this.setState({ admin: true });
+      } else {
+        this.setState({ admin: false });
+      }
+    });
+  };
   render() {
     return (
       <div>
-        {this.state.drivers?<DriverForm driverKey={Object.keys(this.state.drivers)[2]} />:null }
         <Router>
-          <Header />
+          {/* {this.state.drivers ? (
+          <DriverForm
+            onSubmitForm={this.updateDriver}
+            driverKey={Object.keys(this.state.drivers)[0]}
+          />
+        ) : null} */}
+          <Header onToggleLogin={this.toggleLogin} />
+          {this.state.login ? (
+            <LoginForm onSubmitPassword={this.login} />
+          ) : null}
+
           <div style={{ paddingTop: "18px" }}>
             <Route
               path="/"

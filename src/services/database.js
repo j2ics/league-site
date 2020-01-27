@@ -8,6 +8,13 @@ class db {
       .once("value")
       .then(snapshot => snapshot.val());
   };
+  static checkPassword = (pass) => {
+    return fire
+      .database()
+      .ref("pass")
+      .once("value")
+      .then(snapshot => snapshot.val() === pass);
+  };
 
   //Drivers
   static getAllDrivers = () => {
@@ -18,7 +25,7 @@ class db {
       .then(snapshot => snapshot.val());
   };
   static getDriver = key => {
-    console.log("driver key", key)
+    console.log("driver key", key);
     return fire
       .database()
       .ref(`drivers/${key}`)
@@ -31,11 +38,11 @@ class db {
       .ref("drivers")
       .push(driver);
   };
-  static updateDriver = driver => {
+  static updateDriver = payload => {
     fire
       .database()
-      .ref(`drivers/${driver.key}`)
-      .update(driver);
+      .ref(`drivers/${payload.key}`)
+      .update(payload.driver);
   };
   static removeDriver = key => {
     let driverRef = fire.database().ref("drivers/" + key);

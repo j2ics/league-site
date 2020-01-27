@@ -54,7 +54,7 @@ class Header extends Component {
               </li>
             </ul>
 
-            <p>Copyright - J2ICS 2019</p>
+            <p>Copyright - J2ICS 2019 {" "} <span style={{ cursor: "pointer" }} onClick={()=>this.props.onToggleLogin()}>Admin</span></p>
           </div>
         </nav>
         <div className="spacer" />
