@@ -7,6 +7,7 @@ import Schedule from "./components/Schedule";
 import Roster from "./components/Roster";
 import About from "./components/About";
 import Latest from "./components/Latest";
+import AdminBanner from "./components/AdminBanner";
 import Post from "./components/Post";
 import { LoginForm } from "./components/FormComponents/LoginForm";
 import db from "./services/database";
@@ -40,11 +41,12 @@ class App extends Component {
     db.updateDriver(payload);
   };
   login = pass => {
+    console.log("BABABOPYEY!")
     db.checkPassword(pass).then(res => {
       if (res) {
-        this.setState({ admin: true });
+        this.setState({ admin: true, login: false });
       } else {
-        this.setState({ admin: false });
+        this.setState({ admin: false, login: false });
       }
     });
   };
@@ -62,7 +64,11 @@ class App extends Component {
           {this.state.login ? (
             <LoginForm onSubmitPassword={this.login} />
           ) : null}
-
+          {this.state.admin ? (
+            <AdminBanner
+              onLogoutClick={() => this.setState({ admin: false })}
+            />
+          ) : null}
           <div style={{ paddingTop: "18px" }}>
             <Route
               path="/"
