@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 
 export const LoginForm = props => {
-  let [password, updatePassword] = useState("");
+  let [password, updatePassword] = useState("stillgonnasendit");
   const submit = e => {
     e.preventDefault();
+    localStorage.setItem("bv94nb", password);
     props.onSubmitPassword(password)
   };
   return (

@@ -57,6 +57,7 @@ class DriverForm extends React.Component {
       <>
         {!this.state.submitted ? (
           <form onSubmit={this.handleSubmitForm}>
+          <img src={this.state.driver.image} style={{height: "50px"}}/>
             <div className="form-group">
               <label>Enter Name</label>
               <input

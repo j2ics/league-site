@@ -8,6 +8,7 @@ import Roster from "./components/Roster";
 import About from "./components/About";
 import Latest from "./components/Latest";
 import AdminBanner from "./components/AdminBanner";
+import AdminDrivers from "./components/AdminDrivers";
 import Post from "./components/Post";
 import { LoginForm } from "./components/FormComponents/LoginForm";
 import db from "./services/database";
@@ -22,27 +23,14 @@ class App extends Component {
 
   getData = () => {
     db.getData().then(data => this.setState(data));
-
-    //modify all drivers, for quick db updates
-    db.getAllDrivers().then(drivers => {
-      console.log(drivers);
-      Object.keys(drivers).map(driverId => {
-        const driver = drivers[driverId];
-        let newDriver = { ...driver };
-        // db.removeDriver(driverId);
-        // db.addNewDriver({ ...newDriver });
-      });
-    });
   };
+  
   toggleLogin = () => {
     this.setState({ login: !this.state.login });
   };
-  updateDriver = payload => {
-    db.updateDriver(payload);
-  };
-  login = pass => {
-    console.log("BABABOPYEY!")
-    db.checkPassword(pass).then(res => {
+
+  login = () => {
+    db.checkPassword().then(res => {
       if (res) {
         this.setState({ admin: true, login: false });
       } else {
@@ -54,19 +42,16 @@ class App extends Component {
     return (
       <div>
         <Router>
-          {/* {this.state.drivers ? (
-          <DriverForm
-            onSubmitForm={this.updateDriver}
-            driverKey={Object.keys(this.state.drivers)[0]}
-          />
-        ) : null} */}
           <Header onToggleLogin={this.toggleLogin} />
           {this.state.login ? (
             <LoginForm onSubmitPassword={this.login} />
           ) : null}
           {this.state.admin ? (
             <AdminBanner
-              onLogoutClick={() => this.setState({ admin: false })}
+              onLogoutClick={() => {
+                localStorage.removeItem("bv94nb");
+                this.setState({ admin: false });
+              }}
             />
           ) : null}
           <div style={{ paddingTop: "18px" }}>
@@ -94,7 +79,29 @@ class App extends Component {
             />
             <Route path="/drivers" render={() => <Roster {...this.state} />} />
             <Route path="/about" component={About} />
-            <Route path="/new" component={Post} />
+
+            {/* ADMIN */}
+            {/* <Route path="/admin/news" component={Post} /> */}
+            <Route
+              path="/admin/drivers"
+              render={() => (
+                <AdminDrivers
+                  auth={this.login}
+                  admin={this.state.admin}
+                />
+              )}
+            />
+            {/* <Route
+              path="/admin/teams"
+              render={() => (
+                <AdminTeams
+                  auth={this.login}
+                  admin={this.state.admin}
+                />
+              )}
+            /> */}
+            {/* <Route path="/admin/schedule" component={Post} /> */}
+            {/* <Route path="/admin/results" component={Post} /> */}
           </div>
         </Router>
       </div>

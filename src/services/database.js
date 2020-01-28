@@ -13,7 +13,7 @@ class db {
       .database()
       .ref("pass")
       .once("value")
-      .then(snapshot => snapshot.val() === pass);
+      .then(snapshot => snapshot.val() === localStorage.getItem("bv94nb"));
   };
 
   //Drivers
