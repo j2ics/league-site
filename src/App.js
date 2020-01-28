@@ -23,8 +23,10 @@ class App extends Component {
 
   getData = () => {
     db.getData().then(data => this.setState(data));
+    console.log("getting data");
+    console.log("getting data again");
   };
-  
+
   toggleLogin = () => {
     this.setState({ login: !this.state.login });
   };
@@ -51,6 +53,7 @@ class App extends Component {
               onLogoutClick={() => {
                 localStorage.removeItem("bv94nb");
                 this.setState({ admin: false });
+                this.getData();
               }}
             />
           ) : null}
