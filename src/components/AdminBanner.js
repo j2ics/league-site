@@ -14,14 +14,14 @@ const AdminBanner = props => {
             Manage Drivers
           </Link>
         </li>{" "}
-        <li>
+        {/* <li>
           <Link
             to="/admin/teams"
             style={{ backgroundColor: "yellow", color: "black" }}
           >
             Manage Teams
           </Link>
-        </li>{" "}
+        </li>{" "} */}
         <li>
           <Link
             to="/admin/schedule"
@@ -30,14 +30,14 @@ const AdminBanner = props => {
             Manage Schedule
           </Link>
         </li>{" "}
-        <li>
+        {/* <li>
           <Link
             to="/admin/results"
             style={{ backgroundColor: "yellow", color: "black" }}
           >
             Post Result
           </Link>
-        </li>
+        </li> */}
         <li>
           <Link
             to="/admin/news"

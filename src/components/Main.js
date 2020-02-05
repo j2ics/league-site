@@ -34,9 +34,9 @@ class Main extends Component {
                 {this.props.main && (
                   <Next
                     race={
-                      Object.values(
-                        this.props.schedule[new Date().getFullYear()]
-                      )[0]
+                      this.props.races!==undefined?Object.values(
+                        this.props.races[new Date().getFullYear()]
+                      )[0]:{}
                     }
                   />
                 )}

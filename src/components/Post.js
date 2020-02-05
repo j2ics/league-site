@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from "react";
 import db from "../services/database";
+import PrivacyHOC from "./HOC/PrivacyHOC";
+
 
 class Post extends Component {
   handleSubmit = e => {
@@ -52,4 +54,4 @@ class Post extends Component {
   }
 }
 
-export default Post;
+export default PrivacyHOC(Post);

@@ -1,13 +1,11 @@
 import React from "react";
 import db from "../../services/database";
-import { Link } from "react-router-dom";
 
 const INITIAL_DRIVER = {
   name: "",
   country: "",
   image: "",
-  _car_id: 0,
-  _team_id: 0
+  points: 0,
 };
 
 class DriverForm extends React.Component {
@@ -15,7 +13,7 @@ class DriverForm extends React.Component {
     super(props);
     this.state = {
       driver: INITIAL_DRIVER,
-      submitted: false
+      submitted: false,
     };
   }
 
@@ -35,8 +33,8 @@ class DriverForm extends React.Component {
     console.log(e.target.name);
     this.setState({
       driver: Object.assign({}, this.state.driver, {
-        [e.target.name]: e.target.value
-      })
+        [e.target.name]: e.target.value,
+      }),
     });
   };
 
@@ -44,11 +42,11 @@ class DriverForm extends React.Component {
     e.preventDefault();
     this.props.onSubmitForm({
       driver: { ...this.state.driver },
-      key: this.props.driverKey
+      key: this.props.driverKey ? this.props.driverKey : null,
     });
     this.setState({
       driver: INITIAL_DRIVER,
-      submitted: true
+      submitted: true,
     });
   };
 
@@ -56,41 +54,92 @@ class DriverForm extends React.Component {
     return (
       <>
         {!this.state.submitted ? (
-          <form onSubmit={this.handleSubmitForm}>
-          <img src={this.state.driver.image} style={{height: "50px"}}/>
-            <div className="form-group">
-              <label>Enter Name</label>
-              <input
-                type="text"
-                name="name"
-                value={this.state.driver.name}
-                onChange={this.handleChange}
+          <>
+            <form onSubmit={this.handleSubmitForm}>
+              <img
+                src={this.state.driver.image}
+                alt="driver avatar"
+                style={{ height: "50px" }}
               />
-            </div>
-            <div className="form-group">
-              <label>Enter Country</label>
-              <input
-                type="text"
-                name="country"
-                value={this.state.driver.country}
-                onChange={this.handleChange}
-              />
-            </div>
-            <div className="form-group">
-              <label>Enter Image URL</label>
+              {/* <div className="form-group">
+              <label>Enter Avatar URL</label>
               <input
                 type="text"
                 name="image"
                 value={this.state.driver.image}
                 onChange={this.handleChange}
               />
-            </div>
-            <button className="btn btn-success">Submit Values</button>
-          </form>
+            </div> */}
+
+              <div className="form-group">
+                <label>Enter Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  value={this.state.driver.name}
+                  onChange={this.handleChange}
+                />
+              </div>
+              <div className="form-group">
+                <label>Enter Country</label>
+                <input
+                  type="text"
+                  name="country"
+                  value={this.state.driver.country}
+                  onChange={this.handleChange}
+                />
+              </div>
+              <div className="form-group">
+                <label>Enter Image URL</label>
+                <input
+                  type="text"
+                  name="image"
+                  value={this.state.driver.image}
+                  onChange={this.handleChange}
+                />
+              </div>
+              <div className="form-group">
+                <label>CURRENT POINTS</label>
+                <input
+                  type="text"
+                  name="points"
+                  value={this.state.driver.points}
+                  onChange={this.handleChange}
+                />
+              </div>
+
+              <button className="btn btn-success">Submit Values</button>
+            </form>
+            <>
+              <button
+                className="btn btn-warning"
+                onClick={() => {
+                  this.setState({ delete: !this.state.delete });
+                }}
+              >
+                Delete Driver Toggle
+              </button>
+              {this.state.delete ? (
+                <button
+                  className="btn btn-danger"
+                  onClick={() => db.removeDriver(this.props.driverKey)}
+                >
+                  DELETE DRIVER FOR REAL - ARE YOU SURE?
+                </button>
+              ) : null}
+            </>
+          </>
         ) : (
           <>
             <p>"Thanks for submitting!"</p>
-            <button onClick={() => {this.setState({ submitted: false });this.collectDriver()}}>Submit Again</button>
+            <button
+              onClick={() => {
+                this.setState({ submitted: false });
+                this.collectDriver();
+              }}
+            >
+              Submit Again
+            </button>
           </>
         )}
       </>

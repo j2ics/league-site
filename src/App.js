@@ -5,14 +5,14 @@ import Main from "./components/Main";
 import Standings from "./components/Standings";
 import Schedule from "./components/Schedule";
 import Roster from "./components/Roster";
+import Post from './components/Post'
 import About from "./components/About";
 import Latest from "./components/Latest";
 import AdminBanner from "./components/AdminBanner";
 import AdminDrivers from "./components/AdminDrivers";
-import Post from "./components/Post";
 import { LoginForm } from "./components/FormComponents/LoginForm";
 import db from "./services/database";
-import DriverForm from "./components/FormComponents/DriverForm";
+import AdminSchedule from "./components/AdminSchedule";
 
 class App extends Component {
   state = { admin: false, login: false };
@@ -23,8 +23,6 @@ class App extends Component {
 
   getData = () => {
     db.getData().then(data => this.setState(data));
-    console.log("getting data");
-    console.log("getting data again");
   };
 
   toggleLogin = () => {
@@ -80,18 +78,29 @@ class App extends Component {
               path="/schedule"
               render={() => <Schedule {...this.state} />}
             />
-            <Route path="/drivers" render={() => <Roster {...this.state} />} />
+            <Route
+              path="/drivers"
+              render={() => <Roster {...this.state} />}
+            />
             <Route path="/about" component={About} />
-
             {/* ADMIN */}
             {/* <Route path="/admin/news" component={Post} /> */}
             <Route
               path="/admin/drivers"
               render={() => (
-                <AdminDrivers
-                  auth={this.login}
-                  admin={this.state.admin}
-                />
+                <AdminDrivers auth={this.login} admin={this.state.admin} />
+              )}
+            />{" "}
+            <Route
+              path="/admin/schedule"
+              render={() => (
+                <AdminSchedule auth={this.login} admin={this.state.admin} />
+              )}
+            />
+            <Route
+              path="/admin/news"
+              render={() => (
+                <Post auth={this.login} admin={this.state.admin} />
               )}
             />
             {/* <Route

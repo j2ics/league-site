@@ -8,7 +8,7 @@ class db {
       .once("value")
       .then(snapshot => snapshot.val());
   };
-  static checkPassword = (pass) => {
+  static checkPassword = pass => {
     return fire
       .database()
       .ref("pass")
@@ -36,7 +36,7 @@ class db {
     fire
       .database()
       .ref("drivers")
-      .push(driver);
+      .push(driver.driver);
   };
   static updateDriver = payload => {
     fire
@@ -109,8 +109,40 @@ class db {
       .update(article);
   };
   static removeArticle = key => {
-    let articleRed = fire.database().ref("articles/" + key);
-    articleRed.remove();
+    let articleRef = fire.database().ref("articles/" + key);
+    articleRef.remove();
+  };
+
+  //races
+  static getAllRaces = () => {
+    return fire
+      .database()
+      .ref("races")
+      .once("value")
+      .then(snapshot => snapshot.val());
+  };
+  static getRace = key => {
+    return fire
+      .database()
+      .ref(`races/${key}`)
+      .once("value")
+      .then(snapshot => snapshot.val());
+  };
+  static addNewRace = (race, season) => {
+    fire
+      .database()
+      .ref(`races/${season}`)
+      .push(race);
+  };
+  static updaterace = race => {
+    fire
+      .database()
+      .ref(`races/${race.key}`)
+      .update(race);
+  };
+  static removerace = key => {
+    let raceRef = fire.database().ref("races/" + key);
+    raceRef.remove();
   };
 }
 
