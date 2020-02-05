@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import DateTimePicker from "react-datetime-picker";
+import db from "../../services/database";
 
 // <td>{race.date}</td>
 // <td>{race.location}</td>
@@ -12,15 +13,27 @@ const INITIAL_STATE = {
   circuit: "",
   duration: "",
   date: "",
-  season: "2020",
+  season: "2020"
 };
 
 class RaceForm extends Component {
   state = INITIAL_STATE;
 
+  componentDidMount() {
+    if (this.props.raceKey) {
+      console.log("getting race", this.props.match.params.key);
+      db.getRace(this.props.match.params.key, new Date().getFullYear()).then(
+        race => {
+          console.log(race);
+          this.setState(race);
+        }
+      );
+    }
+  }
+
   handleChange = e => {
     this.setState({
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value
     });
   };
 
@@ -33,7 +46,7 @@ class RaceForm extends Component {
         location,
         circuit,
         duration,
-        date: date.toString(),
+        date: date.toString()
       },
       season
     );

@@ -121,10 +121,10 @@ class db {
       .once("value")
       .then(snapshot => snapshot.val());
   };
-  static getRace = key => {
+  static getRace = (key, season) => {
     return fire
       .database()
-      .ref(`races/${key}`)
+      .ref(`races/${season}/${key}`)
       .once("value")
       .then(snapshot => snapshot.val());
   };
@@ -135,13 +135,13 @@ class db {
       .ref(`races/${season}`)
       .push(race);
   };
-  static updaterace = race => {
+  static updateRace = (race, season) => {
     fire
       .database()
-      .ref(`races/${race.key}`)
+      .ref(`races/${season}/${race.key}`)
       .update(race);
   };
-  static removerace = key => {
+  static removeRace = key => {
     let raceRef = fire.database().ref("races/" + key);
     raceRef.remove();
   };

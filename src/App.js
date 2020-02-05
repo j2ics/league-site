@@ -12,6 +12,7 @@ import AdminBanner from "./components/AdminBanner";
 import AdminDrivers from "./components/AdminDrivers";
 import { LoginForm } from "./components/FormComponents/LoginForm";
 import db from "./services/database";
+import RaceForm from "./components/FormComponents/RaceForm";
 import AdminSchedule from "./components/AdminSchedule";
 
 class App extends Component {
@@ -94,7 +95,18 @@ class App extends Component {
               )}
             />{" "}
             <Route
+              path="/admin/schedule/:key"
+              render={props => (
+                <RaceForm
+                  {...props}
+                  raceKey={true}
+                  onSubmitRace={db.updateRace}
+                />
+              )}
+            />{" "}
+            <Route
               path="/admin/schedule"
+              exact
               render={() => (
                 <AdminSchedule auth={this.login} admin={this.state.admin} />
               )}

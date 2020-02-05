@@ -14,7 +14,7 @@ class Post extends Component {
       content: e.target.content.value,
       date: new Date().toDateString()
     };
-    db.postArticle(newPost);
+    db.addNewArticle(newPost);
   };
   render() {
     return (

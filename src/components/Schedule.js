@@ -22,6 +22,7 @@ class Schedule extends Component {
         className={`table-${index % 2 === 0 ? "primary" : "secondary"}`}
       >
         <th scope="row">{index + 1}</th>
+        <td>{race.race}</td>
         <td>{race.location}</td>
         <td>{race.circuit}</td>
         <td>{race.duration}</td>
@@ -68,7 +69,8 @@ class Schedule extends Component {
             <thead>
               <tr>
                 <th scope="col">Round</th>
-                <th scope="col">Race</th>
+                <th scope="col">Event</th> 
+                <th scope="col">Location</th>
                 <th scope="col">Circuit</th>
                 <th scope="col">Length</th>
                 <th scope="col">Date</th>
