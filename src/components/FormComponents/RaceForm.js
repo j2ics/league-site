@@ -44,7 +44,7 @@ class RaceForm extends Component {
         location,
         circuit,
         duration,
-        date: date.toDateString(),
+        date: date.toString(),
         key: this.props.match.params.key
       },
       season
