@@ -43,7 +43,7 @@ class Standings extends Component {
         <div className="container">
           <div style={{ textAlign: "center" }}>
             <img alt="league logo" src={logo} style={{ height: "95px" }} />
-            <h2>2019 Driver Standings:</h2>
+            <h2>2020 Driver Standings:</h2>
           </div>
           <table className="table table-hover">
             <thead>

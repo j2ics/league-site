@@ -15,6 +15,16 @@ class Main extends Component {
         ) : null;
       });
   };
+  getNextRace = () => {
+    let futureRaces = [];
+    Object.values(this.props.races[new Date().getFullYear()]).forEach(race => {
+      if (new Date(race.date).getTime() > new Date().getTime()) {
+        futureRaces.push(race);
+      }
+    });
+    futureRaces.push({location: "No current race scheduled"})
+    return futureRaces[0];
+  }
   render() {
     const leadArticle = Object.values(this.props.articles)[
       Object.values(this.props.articles).length - 1
@@ -37,9 +47,7 @@ class Main extends Component {
                   <Next
                     race={
                       this.props.races !== undefined
-                        ? Object.values(
-                            this.props.races[new Date().getFullYear()]
-                          )[0]
+                        ? this.getNextRace()
                         : {}
                     }
                   />
