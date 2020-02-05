@@ -25,7 +25,6 @@ class db {
       .then(snapshot => snapshot.val());
   };
   static getDriver = key => {
-    console.log("driver key", key);
     return fire
       .database()
       .ref(`drivers/${key}`)
@@ -96,16 +95,16 @@ class db {
       .once("value")
       .then(snapshot => snapshot.val());
   };
-  static addNewArticle = article => {
+  static addNewArticle = (article, ...key) => {
     fire
       .database()
       .ref("articles")
       .push(article);
   };
-  static updateArticle = article => {
+  static updateArticle = (article, key) => {
     fire
       .database()
-      .ref(`articles/${article.key}`)
+      .ref(`articles/${key}`)
       .update(article);
   };
   static removeArticle = key => {
@@ -129,7 +128,6 @@ class db {
       .then(snapshot => snapshot.val());
   };
   static addNewRace = (race, season) => {
-    console.log(race)
     fire
       .database()
       .ref(`races/${season}`)

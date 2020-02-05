@@ -2,21 +2,33 @@ import React, { Component, Fragment } from "react";
 import db from "../services/database";
 import PrivacyHOC from "./HOC/PrivacyHOC";
 
-
 class Post extends Component {
+  state = {
+    title: "",
+    author: "",
+    image: "",
+    content: "",
+    date: new Date().toDateString()
+  };
+  componentDidMount() {
+    if (this.props.match.params.key) {
+      db.getArticle(this.props.match.params.key).then(article => {
+        this.setState({ ...article });
+      });
+    }
+  }
+
   handleSubmit = e => {
     e.preventDefault();
-    console.log(e.target.author.value);
-    const newPost = {
-      title: e.target.title.value,
-      author: e.target.author.value,
-      image: e.target.image.value,
-      content: e.target.content.value,
-      date: new Date().toDateString()
-    };
-    db.addNewArticle(newPost);
+    this.props.onSubmitArticle(this.state, this.props.match.params.key);
+    this.props.onUpdateArticles();
+    this.props.history.push("/");
+  };
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
   };
   render() {
+    let { author, title, content, image } = this.state;
     return (
       <Fragment>
         <div className="container">
@@ -24,17 +36,35 @@ class Post extends Component {
           <form onSubmit={this.handleSubmit}>
             <div className="form-group">
               <label htmlFor="author">Author</label>
-              <input className="form-control-lg" type="text" name="author" />
+              <input
+                value={author}
+                className="form-control-lg"
+                type="text"
+                name="author"
+                onChange={this.handleChange}
+              />
             </div>
 
             <div className="form-group">
               <label htmlFor="image">Image URL</label>
-              <input className="form-control-lg" type="text" name="image" />
+              <input
+                value={image}
+                onChange={this.handleChange}
+                className="form-control-lg"
+                type="text"
+                name="image"
+              />
             </div>
 
             <div className="form-group">
               <label htmlFor="title">Title</label>
-              <input className="form-control" type="text" name="title" />
+              <input
+                value={title}
+                onChange={this.handleChange}
+                className="form-control"
+                type="text"
+                name="title"
+              />
             </div>
 
             <div className="form-group">
@@ -44,6 +74,8 @@ class Post extends Component {
                 type="text-area"
                 name="content"
                 rows="3"
+                value={content}
+                onChange={this.handleChange}
               />
             </div>
             <button className="btn btn-primary">Post Article</button>
@@ -55,3 +87,7 @@ class Post extends Component {
 }
 
 export default PrivacyHOC(Post);
+
+Post.defaultProps = {
+  article: {}
+};

@@ -21,10 +21,8 @@ class RaceForm extends Component {
 
   componentDidMount() {
     if (this.props.raceKey) {
-      console.log("getting race", this.props.match.params.key);
       db.getRace(this.props.match.params.key, new Date().getFullYear()).then(
         race => {
-          console.log(race);
           this.setState(race);
         }
       );
@@ -46,7 +44,8 @@ class RaceForm extends Component {
         location,
         circuit,
         duration,
-        date: date.toString()
+        date: date.toDateString(),
+        key: this.props.match.params.key
       },
       season
     );

@@ -46,6 +46,14 @@ const AdminBanner = props => {
             New Article
           </Link>
         </li>
+        <li>
+          <Link
+            to="/admin/articles"
+            style={{ backgroundColor: "yellow", color: "black" }}
+          >
+            Edit Articles
+          </Link>
+        </li>{" "}
       </ul>
       <h4 style={{ cursor: "pointer" }} onClick={() => props.onLogoutClick()}>
         Logout

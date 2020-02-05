@@ -32,7 +32,6 @@ class DriverForm extends React.Component {
   };
 
   handleChange = e => {
-    console.log(e.target.name);
     this.setState({
       driver: Object.assign({}, this.state.driver, {
         [e.target.name]: e.target.value,

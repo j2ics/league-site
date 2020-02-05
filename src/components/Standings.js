@@ -20,14 +20,14 @@ class Standings extends Component {
               ? `-${leaderPoints - driver.points}`
               : "-"}
           </td>
-          <td>{driver.car.make}</td>
+          <td>{driver.team}</td>
           <td>
             <img
               src={this.getCountryFlag(driver.country)}
               alt={driver.country}
             />
           </td>
-          <td>{driver.car.model}</td>
+          <td>{driver.car}</td>
         </tr>
       );
     });

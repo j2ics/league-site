@@ -8,12 +8,13 @@ import Roster from "./components/Roster";
 import Post from "./components/Post";
 import About from "./components/About";
 import Latest from "./components/Latest";
+import db from "./services/database";
+import { LoginForm } from "./components/FormComponents/LoginForm";
+import AdminArticles from "./components/AdminArticles";
 import AdminBanner from "./components/AdminBanner";
 import AdminDrivers from "./components/AdminDrivers";
-import { LoginForm } from "./components/FormComponents/LoginForm";
-import db from "./services/database";
-import RaceForm from "./components/FormComponents/RaceForm";
 import AdminSchedule from "./components/AdminSchedule";
+import RaceForm from "./components/FormComponents/RaceForm";
 
 class App extends Component {
   state = { admin: false, login: false };
@@ -24,10 +25,15 @@ class App extends Component {
 
   getData = () => {
     db.getData().then(data => {
-      // if (!data.races) {
-      //   data.races = { testing: true };
-      // }
       this.setState(data);
+    });
+  };
+
+  fetchArticles = () => {
+    db.getAllArticles().then(all => {
+      this.setState({
+        articles: all
+      });
     });
   };
 
@@ -82,6 +88,7 @@ class App extends Component {
             />
             <Route
               path="/schedule"
+              exact
               render={() => <Schedule {...this.state} />}
             />
             <Route path="/drivers" render={() => <Roster {...this.state} />} />
@@ -113,7 +120,37 @@ class App extends Component {
             />
             <Route
               path="/admin/news"
-              render={() => <Post auth={this.login} admin={this.state.admin} />}
+              render={props => (
+                <Post
+                  auth={this.login}
+                  admin={this.state.admin}
+                  {...props}
+                  onUpdateArticles={this.fetchArticles}
+                  onSubmitArticle={db.addNewArticle}
+                />
+              )}
+            />
+            <Route
+              path="/admin/articles"
+              exact
+              render={() => <AdminArticles articles={this.state.articles} />}
+              auth={this.login}
+              admin={this.state.admin}
+            />
+            <Route
+              path="/admin/article/edit/:key"
+              exact
+              render={(props) => (
+                <Post
+                  auth={this.login}
+                  admin={this.state.admin}
+                  {...props}
+                  onSubmitArticle={db.updateArticle} //update callbacks
+                  onUpdateArticles={this.fetchArticles}
+                />
+              )}
+              auth={this.login}
+              admin={this.state.admin}
             />
             {/* <Route
               path="/admin/teams"
