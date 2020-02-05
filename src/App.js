@@ -5,7 +5,7 @@ import Main from "./components/Main";
 import Standings from "./components/Standings";
 import Schedule from "./components/Schedule";
 import Roster from "./components/Roster";
-import Post from './components/Post'
+import Post from "./components/Post";
 import About from "./components/About";
 import Latest from "./components/Latest";
 import AdminBanner from "./components/AdminBanner";
@@ -22,7 +22,12 @@ class App extends Component {
   }
 
   getData = () => {
-    db.getData().then(data => this.setState(data));
+    db.getData().then(data => {
+      // if (!data.races) {
+      //   data.races = { testing: true };
+      // }
+      this.setState(data);
+    });
   };
 
   toggleLogin = () => {
@@ -78,10 +83,7 @@ class App extends Component {
               path="/schedule"
               render={() => <Schedule {...this.state} />}
             />
-            <Route
-              path="/drivers"
-              render={() => <Roster {...this.state} />}
-            />
+            <Route path="/drivers" render={() => <Roster {...this.state} />} />
             <Route path="/about" component={About} />
             {/* ADMIN */}
             {/* <Route path="/admin/news" component={Post} /> */}
@@ -99,9 +101,7 @@ class App extends Component {
             />
             <Route
               path="/admin/news"
-              render={() => (
-                <Post auth={this.login} admin={this.state.admin} />
-              )}
+              render={() => <Post auth={this.login} admin={this.state.admin} />}
             />
             {/* <Route
               path="/admin/teams"

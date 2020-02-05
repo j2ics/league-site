@@ -5,6 +5,8 @@ const INITIAL_DRIVER = {
   name: "",
   country: "",
   image: "",
+  car: "",
+  team: "",
   points: 0,
 };
 
@@ -24,7 +26,7 @@ class DriverForm extends React.Component {
   collectDriver = () => {
     if (this.props.driverKey) {
       db.getDriver(this.props.driverKey).then(driver => {
-        this.setState({ driver: driver });
+        this.setState({ driver: Object.assign({}, INITIAL_DRIVER, driver) });
       });
     }
   };
@@ -95,6 +97,24 @@ class DriverForm extends React.Component {
                   type="text"
                   name="image"
                   value={this.state.driver.image}
+                  onChange={this.handleChange}
+                />
+              </div>
+              <div className="form-group">
+                <label>Car Make/Model</label>
+                <input
+                  type="text"
+                  name="car"
+                  value={this.state.driver.car}
+                  onChange={this.handleChange}
+                />
+              </div>
+              <div className="form-group">
+                <label>Team Name</label>
+                <input
+                  type="text"
+                  name="team"
+                  value={this.state.driver.team}
                   onChange={this.handleChange}
                 />
               </div>

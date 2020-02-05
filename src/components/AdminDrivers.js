@@ -6,7 +6,7 @@ import db from "../services/database";
 class AdminDrivers extends React.Component {
   state = {
     drivers: [],
-    teams: []
+    teams: [],
   };
 
   componentDidMount() {
@@ -21,21 +21,20 @@ class AdminDrivers extends React.Component {
   renderDrivers = () => {
     //   console.log(Object.keys(this.state.drivers));
     return [
-      <div style={{ backgroundColor: "grey", color:"black" }}>
+      <div style={{ backgroundColor: "grey", color: "black" }}>
         <h4>NEW DRIVER</h4>
         <DriverForm onSubmitForm={db.addNewDriver} />
       </div>,
       Object.keys(this.state.drivers).map(key => {
         return (
-          <div className="col col-md-4">
+          <div className="col col-md-4" key={key}>
             <DriverForm
               onSubmitForm={db.updateDriver}
-              key={key}
               driverKey={key}
             />
           </div>
         );
-      })
+      }),
     ];
   };
 

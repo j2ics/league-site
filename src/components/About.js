@@ -9,11 +9,11 @@ const About = () => {
         <div className="jumbotron">
           <p>The Just 2 Idiots Cup series is an online racing series.</p>
           <p>
-            Races are run using the <strong>Project Cars 2</strong> simulation
+            Races are run using the <strong>iRacing</strong> simulation
             software.
           </p>
           <p>
-            To learn more, including to sign up for our 2020 season, email Dale.
+            To learn more, including to sign up for our 2020 season, follow us on Instagram <b>@Just2IdiotsCupSeries</b>
           </p>
           <Loading />
         </div>

@@ -10,7 +10,9 @@ class Main extends Component {
       .reverse()
       .slice(1, 3)
       .map((article, index) => {
-        return index%marker==0? <Article key={index} article={article} lead={false} />:null;
+        return index % marker === 0 ? (
+          <Article key={index} article={article} lead={false} />
+        ) : null;
       });
   };
   render() {
@@ -34,9 +36,11 @@ class Main extends Component {
                 {this.props.main && (
                   <Next
                     race={
-                      this.props.races!==undefined?Object.values(
-                        this.props.races[new Date().getFullYear()]
-                      )[0]:{}
+                      this.props.races !== undefined
+                        ? Object.values(
+                            this.props.races[new Date().getFullYear()]
+                          )[0]
+                        : {}
                     }
                   />
                 )}

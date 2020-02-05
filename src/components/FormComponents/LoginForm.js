@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 export const LoginForm = props => {
-  let [password, updatePassword] = useState("stillgonnasendit");
+  let [password, updatePassword] = useState("");
   const submit = e => {
     e.preventDefault();
     localStorage.setItem("bv94nb", password);

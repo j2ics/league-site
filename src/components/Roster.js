@@ -4,7 +4,8 @@ import LoaderHOC from "../LoaderHOC";
 
 class Roster extends Component {
   state = {
-    currentDriver: this.props.drivers[0]
+    currentDriver: Object.values(this.props.drivers)[0],
+    drivers: Object.values(this.props.drivers)
   };
 
   driverCard = (driver, idx) => {
@@ -33,7 +34,7 @@ class Roster extends Component {
   };
 
   renderDrivers = () => {
-    const { drivers } = this.props;
+    const {drivers} = this.state;
     return drivers
       .sort((a, b) => {
         if (a.name.toLowerCase() < b.name.toLowerCase()) {
@@ -66,7 +67,9 @@ class Roster extends Component {
               <h4 className="modal-title" id="exampleModalLabel">
                 <img
                   alt="nataional flag"
-                  src={`https://www.countryflags.io/${currentDriver.country}/flat/32.png`}
+                  src={`https://www.countryflags.io/${
+                    currentDriver.country
+                  }/flat/32.png`}
                 />{" "}
                 {currentDriver.name}
               </h4>
@@ -91,13 +94,13 @@ class Roster extends Component {
                 <div className="col-md-7">
                   <ul className="list-group list-group-flush">
                     <li className="list-group-item">
-                      Team: <h4>{currentDriver.car.make}</h4>
+                      Team: <h4>{currentDriver.team}</h4>
                     </li>
                     <li className="list-group-item">
-                      Chassis: <h5>{currentDriver.car.model}</h5>
+                      Chassis: <h5>{currentDriver.car}</h5>
                     </li>
                     <li className="list-group-item">
-                      2019 points: <h5>{currentDriver.points}</h5>
+                      2020 points: <h5>{currentDriver.points}</h5>
                     </li>
                   </ul>
                 </div>

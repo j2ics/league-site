@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import DateTimePicker from "react-datetime-picker";
 
 // <td>{race.date}</td>
 // <td>{race.location}</td>
@@ -6,11 +7,11 @@ import React, { Component } from "react";
 // <td>{race.duration}</td>
 
 const INITIAL_STATE = {
-  race: "TestRaceData - IGNORE",
-  location: "TestRaceData - IGNORE",
-  circuit: "TestRaceData - IGNORE",
-  duration: "TestRaceData - IGNORE",
-  datetime: "TestRaceData - IGNORE",
+  race: "",
+  location: "",
+  circuit: "",
+  duration: "",
+  date: "",
   season: "2020",
 };
 
@@ -25,17 +26,18 @@ class RaceForm extends Component {
 
   handleSubmitForm = e => {
     e.preventDefault();
-    let { race, location, circuit, duration, datetime, season } = this.state;
+    let { race, location, circuit, duration, date, season } = this.state;
     this.props.onSubmitRace(
       {
         race,
         location,
         circuit,
         duration,
-        datetime,
+        date: date.toString(),
       },
       season
     );
+    this.setState(INITIAL_STATE);
   };
 
   render() {
@@ -79,17 +81,17 @@ class RaceForm extends Component {
               onChange={this.handleChange}
             />
           </div>
-          <div className="form-group">
+          <div className="form-group" style={{ backgroundColor: "beige" }}>
             <label>Race Date and Time:</label>
-            <input
-              type="text"
+            <DateTimePicker
+              type="datetime-local"
               name="datetime"
-              value={this.state.datetime}
-              onChange={this.handleChange}
+              value={this.state.date}
+              onChange={date => this.setState({ date })}
             />
           </div>
           <div className="form-group">
-            <label>Race Date and Time:</label>
+            <label>Season:</label>
             <select
               name="season"
               value={this.state.season}

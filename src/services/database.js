@@ -129,6 +129,7 @@ class db {
       .then(snapshot => snapshot.val());
   };
   static addNewRace = (race, season) => {
+    console.log(race)
     fire
       .database()
       .ref(`races/${season}`)
