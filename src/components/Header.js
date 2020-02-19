@@ -8,7 +8,7 @@ class Header extends Component {
       <Fragment>
         <nav className="navbar navbar-expand-lg navbar-dark bg-j2ics">
           <Link to="/" className="navbar-brand" href="/">
-            <img alt="league logo" src={logo} style={{ height: "28px" }} />
+            <img alt="league logo" src={logo} style={{ height: "28px" }} onClick={()=>this.props.getData()}/>
           </Link>
           <button
             className="navbar-toggler"

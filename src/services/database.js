@@ -43,6 +43,12 @@ class db {
       .ref(`drivers/${payload.key}`)
       .update(payload.driver);
   };
+  static updateAllDrivers = payload => {
+    fire
+      .database()
+      .ref(`drivers`)
+      .update(payload);
+  };
   static removeDriver = key => {
     let driverRef = fire.database().ref("drivers/" + key);
     driverRef.remove();

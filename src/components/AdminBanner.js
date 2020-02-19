@@ -30,6 +30,14 @@ const AdminBanner = props => {
             Manage Schedule
           </Link>
         </li>{" "}
+        <li>
+          <Link
+            to="/admin/points"
+            style={{ backgroundColor: "yellow", color: "black" }}
+          >
+            Update Points
+          </Link>
+        </li>{" "}
         {/* <li>
           <Link
             to="/admin/results"

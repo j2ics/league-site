@@ -14,6 +14,7 @@ import AdminArticles from "./components/AdminArticles";
 import AdminBanner from "./components/AdminBanner";
 import AdminDrivers from "./components/AdminDrivers";
 import AdminSchedule from "./components/AdminSchedule";
+import AdminPoints from "./components/AdminPoints";
 import RaceForm from "./components/FormComponents/RaceForm";
 
 class App extends Component {
@@ -54,7 +55,7 @@ class App extends Component {
     return (
       <div>
         <Router>
-          <Header onToggleLogin={this.toggleLogin} />
+          <Header onToggleLogin={this.toggleLogin} getData={this.getData}/>
           {this.state.login ? (
             <LoginForm onSubmitPassword={this.login} />
           ) : null}
@@ -119,6 +120,13 @@ class App extends Component {
               )}
             />
             <Route
+              path="/admin/points"
+              exact
+              render={(props) => (
+                <AdminPoints {...props} getData={this.getData} auth={this.login} admin={this.state.admin} />
+              )}
+            />
+            <Route
               path="/admin/news"
               render={props => (
                 <Post
@@ -140,7 +148,7 @@ class App extends Component {
             <Route
               path="/admin/article/edit/:key"
               exact
-              render={(props) => (
+              render={props => (
                 <Post
                   auth={this.login}
                   admin={this.state.admin}
