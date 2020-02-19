@@ -23,7 +23,8 @@ class RaceForm extends Component {
     if (this.props.raceKey) {
       db.getRace(this.props.match.params.key, new Date().getFullYear()).then(
         race => {
-          this.setState(race);
+          race.date = race.date===""?Date.now():race.date
+          this.setState(Object.assign({...race}, {date: new Date(race.date)}));
         }
       );
     }

@@ -30,12 +30,12 @@ class AdminSchedule extends React.Component {
                 ? Object.keys(this.state.races[0]).map(raceKey => {
                     let race = this.state.races[0][raceKey];
                     return (
-                      <>
+                      <div key={raceKey}>
                         <li key={Math.random()}>
                           {race.race}, at {race.circuit}
                         </li>
                         <Link to={`/admin/schedule/${raceKey}`} className="btn btn-info">Edit</Link>
-                      </>
+                      </div>
                     );
                   })
                 : null}
