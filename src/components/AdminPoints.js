@@ -4,7 +4,8 @@ import db from "../services/database";
 
 class AdminPoints extends React.Component {
   state = {
-    drivers: []
+    drivers: [],
+    toggle: "primary"
   };
 
   componentDidMount() {
@@ -17,23 +18,35 @@ class AdminPoints extends React.Component {
     driver.points = e.target.value;
     this.setState(prevState => {
       return {
-        drivers: Object.assign({ ...prevState.drivers }, { [driverKey]: driver })
+        drivers: Object.assign(
+          { ...prevState.drivers },
+          { [driverKey]: driver }
+        )
       };
     });
   };
 
-  renderDriverRow = driverKey => {
+  renderDriverRow = (driverKey, index) => {
     let driver = this.state.drivers[driverKey];
+    console.log(driverKey);
     return (
-      <div key={driverKey} className="form-group">
-        <label htmlFor={driver.name}>{driver.name}</label>
-        <input
-          value={driver.points}
-          name={driver.name}
-          type="text"
-          onChange={e => this.updateDriver(e, driver, driverKey)}
-        />
-      </div>
+      <tr
+        key={driverKey}
+        className={`table-${
+          index % 2 === 0 ? "primary" : "secondary"
+        } form-group`}
+      >
+        <td htmlFor={driver.name}>{driver.name}</td>
+        <td style={{ "padding-top": "12px" }}>
+          <input
+            className="form-control-sm"
+            value={driver.points}
+            name={driver.name}
+            type="text"
+            onChange={e => this.updateDriver(e, driver, driverKey)}
+          />
+        </td>
+      </tr>
     );
   };
   submitPoints = e => {
@@ -47,16 +60,29 @@ class AdminPoints extends React.Component {
   render() {
     return (
       <>
-        <h3>Update Driver Points</h3>
-        <form onSubmit={this.submitPoints}>
-          <button type="submit" className="btn btn-success">Submit Points</button>
-          {Object.keys(this.state.drivers).map(driverKey => {
-            return this.renderDriverRow(driverKey);
-          })}
-        </form>
+        <div className="container">
+          <div style={{ textAlign: "left" }}>
+            <h3>Update Driver Points</h3>
+            <form onSubmit={this.submitPoints}>
+              <button type="submit" className="btn btn-success">
+                Submit Points
+              </button>
+              <table className="table table-hover">
+                <tr>
+                  <th>Driver</th>
+                  <th>Points</th>
+                </tr>
+                {Object.keys(this.state.drivers).map((driverKey, index) => {
+                  return this.renderDriverRow(driverKey, index);
+                })}
+              </table>
+            </form>
+          </div>
+        </div>
       </>
     );
   }
 }
 
-export default PrivacyHOC(AdminPoints);
+export default AdminPoints;
+// export default PrivacyHOC(AdminPoints);

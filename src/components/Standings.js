@@ -11,7 +11,9 @@ class Standings extends Component {
     const leaderPoints = drivers[0].points;
     return drivers.map((driver, index) => {
       return (
-        <tr key={index} className="table-primary">
+        <tr key={index} className={`table-${
+          index % 2 === 0 ? "primary" : "secondary"
+        }`}>
           <th scope="row">{index + 1}</th>
           <th scope="row">{driver.name}</th>
           <td>{driver.points}</td>

@@ -129,7 +129,7 @@ class Roster extends Component {
         <div className="container">
           <div style={{ textAlign: "center" }}>
             <img alt="league logo" src={logo} style={{ height: "65px" }} />
-            <h3>2019 Drivers</h3>
+            <h3>{new Date().getFullYear()} Drivers</h3>
             <div className="jumbotron">
               <div className="row">{this.renderDrivers()}</div>
             </div>

@@ -55,7 +55,7 @@ class App extends Component {
     return (
       <div>
         <Router>
-          <Header onToggleLogin={this.toggleLogin} getData={this.getData}/>
+          <Header onToggleLogin={this.toggleLogin} getData={this.getData} />
           {this.state.login ? (
             <LoginForm onSubmitPassword={this.login} />
           ) : null}
@@ -122,7 +122,7 @@ class App extends Component {
             <Route
               path="/admin/points"
               exact
-              render={(props) => (
+              render={props => (
                 <AdminPoints {...props} getData={this.getData} auth={this.login} admin={this.state.admin} />
               )}
             />
